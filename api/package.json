@@ -1,0 +1,35 @@
+{
+  "name": "test-site-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build/app.js",
+    "start:watch": "nodemon -x 'npm run start'"
+  },
+  "dependencies": {
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
+    "helmet": "7.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.20",
+    "@types/node": "20.8.10",
+    "nodemon": "3.0.1",
+    "typescript": "5.2.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      ".git",
+      "**/node_modules/**",
+      "**/build/**"
+    ],
+    "watch": [
+      "app.ts"
+    ],
+    "verbose": true,
+    "ext": "js,jsx,json,ts,tsx"
+  }
+}
