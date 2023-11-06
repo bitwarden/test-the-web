@@ -1,0 +1,7 @@
+**/build
+**/dist
+**/node_modules
+**/webpack.*.js
+**/.docusaurus
+
+.github/workflows

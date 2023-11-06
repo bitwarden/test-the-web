@@ -1,0 +1,7 @@
+{
+  "label": "Payment",
+  "link": {
+    "type": "generated-index",
+    "description": "Common patterns for payment forms"
+  }
+}

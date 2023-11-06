@@ -1,0 +1,7 @@
+{
+  "label": "Search",
+  "link": {
+    "type": "generated-index",
+    "description": "Common patterns for search inputs"
+  }
+}
