@@ -9,7 +9,6 @@ const {themes: {github: lightCodeTheme, dracula: darkCodeTheme}} = require('pris
 /** @type {import('@docusaurus/types').Config} */
 const config: Config = {
   title: 'Test the Web',
-  // tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
@@ -72,11 +71,15 @@ const config: Config = {
           hideable: true,
         }
       },
-      colorMode: {
-        defaultMode: 'dark',
-      },
       navbar: {
         title: 'Test the Web',
+        logo: {
+          alt: 'Test the Web Logo',
+          src: 'inlineSVG',
+          width: 32,
+          height: 32,
+          className: 'custom-navbar-logo-class',
+        },
         items: [
           {
             type: 'docSidebar',
@@ -85,9 +88,12 @@ const config: Config = {
             label: 'Forms',
           },
           {
+            type: 'custom-githubIcon',
             href: 'https://github.com/bitwarden/test-the-web',
-            label: 'source',
-            position: 'right',
+            height: 24,
+            width: 24,
+            label: 'website source at Github',
+            position: "right"
           },
         ],
       },

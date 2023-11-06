@@ -18,7 +18,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -34,11 +34,11 @@
 }
 .theme-doc-markdown > header:first-of-type details > summary::after {
   font-size: 24px;
-  content: ' ▸';
+  content: " ▸";
 }
 .theme-doc-markdown > header:first-of-type details[open] > summary::after {
   font-size: 24px;
-  content: ' ▾';
+  content: " ▾";
 }
 
 .theme-doc-markdown > header:first-of-type h1:first-of-type {
@@ -50,12 +50,32 @@
 
 /* Conditionally hide components */
 .hidden,
-html[data-bare-page='true'] .navbar,
-html[data-bare-page='true'] .footer,
-html[data-bare-page='true'] .theme-doc-sidebar-container,
-html[data-bare-page='true'] .pagination-nav,
-html[data-bare-page='true'] .theme-doc-markdown > header,
-html[data-hide-sidebar='true'] .theme-doc-sidebar-container,
-html[data-hide-pagination='true'] .pagination-nav {
+html[data-bare-page="true"] .navbar,
+html[data-bare-page="true"] .footer,
+html[data-bare-page="true"] .theme-doc-sidebar-container,
+html[data-bare-page="true"] .pagination-nav,
+html[data-bare-page="true"] .theme-doc-markdown > header,
+html[data-hide-sidebar="true"] .theme-doc-sidebar-container,
+html[data-hide-pagination="true"] .pagination-nav {
   display: none;
+}
+
+.navbar__items > a {
+  display: flex;
+}
+
+.navbar .inline-svg:not(.custom-navbar-logo-class) {
+  margin-right: 1rem;
+}
+
+a.navbar__brand:hover .navbar__logo .custom-navbar-logo-class {
+  fill: var(--ifm-navbar-link-hover-color);
+}
+
+.navbar .inline-svg {
+  fill: var(--ifm-color-content);
+}
+
+.navbar .inline-svg:not(.custom-navbar-logo-class):hover {
+  fill: var(--ifm-navbar-link-hover-color);
 }
