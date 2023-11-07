@@ -31,7 +31,7 @@ app.route("/login").post((request: Request, response: Response) => {
   let referrerQueryParams = "";
 
   response.cookie("referrerRequestBody", JSON.stringify(request.body), {
-    path: "/forms/success/login-success",
+    path: "/forms/response/login-success",
     sameSite: true,
     secure: true,
     maxAge: 1000 * 60 * 5,
@@ -45,7 +45,29 @@ app.route("/login").post((request: Request, response: Response) => {
   } catch {}
 
   // referrer query param passthrough
-  response.redirect(`/forms/success/login-success${referrerQueryParams}`);
+  response.redirect(`/forms/response/login-success${referrerQueryParams}`);
+});
+
+app.route("/payment").post((request: Request, response: Response) => {
+  const referrerURL = request.get("Referrer") || "";
+  let referrerQueryParams = "";
+
+  response.cookie("referrerRequestBody", JSON.stringify(request.body), {
+    path: "/forms/response/request-success",
+    sameSite: true,
+    secure: true,
+    maxAge: 1000 * 60 * 5,
+  });
+
+  try {
+    const url = new URL(referrerURL);
+    url.searchParams.append("docusaurus-data-hide-pagination", "true");
+    url.searchParams.append("docusaurus-data-hide-header", "true");
+    referrerQueryParams = url.search;
+  } catch {}
+
+  // referrer query param passthrough
+  response.redirect(`/forms/response/request-success${referrerQueryParams}`);
 });
 
 try {

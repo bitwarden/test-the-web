@@ -1,8 +1,8 @@
 {
-  "label": "Success",
+  "label": "Form Response",
   "className": "hidden",
   "link": {
     "type": "generated-index",
-    "description": "Success pages for forms"
+    "description": "Response pages for forms"
   }
 }
