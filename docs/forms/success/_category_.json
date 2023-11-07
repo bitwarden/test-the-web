@@ -1,0 +1,8 @@
+{
+  "label": "Success",
+  "className": "hidden",
+  "link": {
+    "type": "generated-index",
+    "description": "Success pages for forms"
+  }
+}
