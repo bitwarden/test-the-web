@@ -1,8 +1,8 @@
 ---
 slug: bare-inputs-login
 title: login inputs without an enclosing form
-sidebar_label: bare inputs login
-description: These are bare inputs without an enclosing `<form>` tag that will POST (via `fetch`) the input values on submit and will return with an HTTP response code of `200`
+sidebar_label: bare inputs
+description: These are bare inputs without an enclosing `<form>` tag that will POST (via `fetch`) the input values on submit and will return with an HTTP response code of `200`.
 ---
 
 <script src="/js/bare-inputs-login.js" defer="defer"></script>

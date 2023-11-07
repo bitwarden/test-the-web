@@ -1,9 +1,9 @@
 ---
-slug: iframe-other-domain
-title: iframe login form (other domain)
+slug: iframe-other-domain-login
+title: login form hosted on another domain embedded with an iframe
 sidebar_label: iframe (other domain)
 sidebar_position: 4
-description: This is a basic login form hosted on another domain, nested within an inline frame (iframe) that will POST on submit and will return with a HTTP response code of `200`
+description: This is a login form hosted on another domain, nested within an inline frame (iframe) that will POST on submit and will return with a HTTP response code of `200`.
 draft: true
 ---
 

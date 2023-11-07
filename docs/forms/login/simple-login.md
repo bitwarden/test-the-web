@@ -3,7 +3,7 @@ slug: simple
 title: simple login form
 sidebar_label: simple
 sidebar_position: 1
-description: This is a basic login form that will POST the input values on submit and will return with an HTTP response code of `200`
+description: This is a basic login form that will POST the input values on submit and will return with an HTTP response code of `200`.
 ---
 
 <div class="container margin-vert--xl">

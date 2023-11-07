@@ -1,9 +1,9 @@
 ---
-slug: iframe-sandboxed
+slug: iframe-sandboxed-login
 title: sandboxed iframe login form
 sidebar_label: iframe (sandboxed)
 sidebar_position: 3
-description: This is a basic login form nested within an inline frame (iframe) utilizing the sandbox attribute which is set to `allow-scripts allow-same-origin`. It will POST on submit and will return with a HTTP response code of `200`
+description: This is a login form nested within an inline frame (iframe) utilizing the sandbox attribute which is set to `allow-scripts allow-same-origin`. It will POST on submit and will return with a HTTP response code of `200`.
 ---
 
 <iframe
