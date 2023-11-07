@@ -40,6 +40,7 @@ app.route("/login").post((request: Request, response: Response) => {
   try {
     const url = new URL(referrerURL);
     url.searchParams.append("docusaurus-data-hide-pagination", "true");
+    url.searchParams.append("docusaurus-data-hide-header", "true");
     referrerQueryParams = url.search;
   } catch {}
 

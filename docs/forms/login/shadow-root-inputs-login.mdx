@@ -1,0 +1,52 @@
+---
+slug: shadow-root-inputs
+title: shadow-root inputs login form
+sidebar_label: shadow-root inputs
+description: This login form utilizes inputs within "shadow roots". It will POST the input values on submit and will return with an HTTP response code of `200`
+---
+
+import '@material/web/button/filled-button.js';
+import '@material/web/textfield/outlined-text-field.js';
+
+<div class="container margin-vert--xl">
+  <div class="row">
+    <div class="card col col--12 padding--md">
+      <form
+        class="card__body"
+        method="POST"
+        action="/login"
+      >
+        <input
+          type="hidden"
+          name="_token"
+          value="abcdefghijklmnopqrstuvwxyz1234567890"
+        />
+        <div class="row margin-bottom--md">
+          <md-outlined-text-field
+            type="text"
+            id="username"
+            label="Username"
+            name="username"
+            placeholder="e.g. jsmith, jsmith@example.com"
+            required
+            autofocus
+          />
+        </div>
+        <div class="row margin-bottom--md">
+          <md-outlined-text-field
+            type="password"
+            id="password"
+            name="password"
+            required
+            label="Password"
+            placeholder="your password"
+          />
+        </div>
+        <div class="row">
+          <md-filled-button type="submit" class="btn btn-primary">Login</md-filled-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr/>

@@ -27,6 +27,17 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* material design web color overrides */
+  --md-outlined-text-field-focus-input-text-color: var(--ifm-pagination-nav-color-hover);
+  --md-outlined-text-field-focus-label-text-color: var(--ifm-pagination-nav-color-hover);
+  --md-outlined-text-field-focus-label-text-color: var(--ifm-pagination-nav-color-hover);
+  --md-outlined-text-field-focus-outline-color: var(--ifm-pagination-nav-color-hover);
+  --md-outlined-text-field-hover-input-text-color: var(--ifm-pagination-nav-color-hover);
+  --md-outlined-text-field-hover-label-text-color: var(--ifm-pagination-nav-color-hover);
+  --md-outlined-text-field-hover-outline-color: var(--ifm-pagination-nav-color-hover);
+  --md-outlined-text-field-input-text-color: #e3e3e3;
+  --md-outlined-text-field-label-text-color: #e3e3e3;
 }
 
 .theme-doc-markdown > header:first-of-type details > summary {
@@ -48,15 +59,55 @@
   margin-bottom: 5px;
 }
 
+input[type="url"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="password"],
+input[type="text"] {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-pagination-nav-border-radius);
+  background: var(--docsearch-searchbox-background);
+  padding: var(--ifm-navbar-item-padding-vertical) var(--ifm-navbar-item-padding-horizontal);
+  line-height: 1.5;
+  color: var(--docsearch-text-color);
+}
+
+input[type="url"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="search"]:hover,
+input[type="password"]:hover,
+input[type="text"]:hover {
+  border-color: var(--ifm-pagination-nav-color-hover);
+}
+
+input[type="url"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="url"]:active,
+input[type="email"]:active,
+input[type="tel"]:active,
+input[type="search"]:active,
+input[type="password"]:active,
+input[type="text"]:active {
+  outline: var(--ifm-pagination-nav-color-hover) 2px solid;
+  background: var(--docsearch-searchbox-focus-background);
+}
+
 /* Conditionally hide components */
 .hidden,
-html[data-bare-page="true"] .navbar,
 html[data-bare-page="true"] .footer,
-html[data-bare-page="true"] .theme-doc-sidebar-container,
+html[data-bare-page="true"] .navbar,
 html[data-bare-page="true"] .pagination-nav,
 html[data-bare-page="true"] .theme-doc-markdown > header,
-html[data-hide-sidebar="true"] .theme-doc-sidebar-container,
-html[data-hide-pagination="true"] .pagination-nav {
+html[data-bare-page="true"] .theme-doc-sidebar-container,
+html[data-hide-header="true"] .theme-doc-markdown > header,
+html[data-hide-pagination="true"] .pagination-nav,
+html[data-hide-sidebar="true"] .theme-doc-sidebar-container {
   display: none;
 }
 
