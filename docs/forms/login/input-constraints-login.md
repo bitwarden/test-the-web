@@ -2,7 +2,7 @@
 slug: input-constraints-login
 title: login form with input constraints
 sidebar_label: input constraints
-description: This is a login form with input constraints that will disallow automated or manual entry of non-matching value patterns. It will POST the input values on submit and will return with an HTTP response code of `200`
+description: This is a login form with input constraints that will disallow automated or manual entry of non-matching value patterns. It will POST the input values on submit.
 ---
 
 <script src="/js/input-constraints-login.js" defer="defer"></script>
@@ -15,13 +15,17 @@ description: This is a login form with input constraints that will disallow auto
         method="POST"
         action="/login"
       >
+        <input
+          type="hidden"
+          name="_token"
+          value="abcdefghijklmnopqrstuvwxyz1234567890"
+        />
         <div class="row">
           <label for="email" class="margin-right--sm">User Email</label>
           <input
             type="email"
             id="email"
             name="email"
-            label="User email"
             placeholder="e.g. jsmith@example.com"
             required
           />
@@ -35,7 +39,6 @@ description: This is a login form with input constraints that will disallow auto
             type="text"
             id="org-name"
             name="org-name"
-            label="Org Name"
             value="Org Corp."
             readonly
             required
@@ -52,7 +55,7 @@ description: This is a login form with input constraints that will disallow auto
             name="password"
             maxlength="6"
             pattern="[0-9]{6}"
-            title="The expected input format is a 6-digit number"
+            title="a 6-digit number"
             required
           />
         </div>
@@ -62,11 +65,6 @@ description: This is a login form with input constraints that will disallow auto
         <div class="row">
           <button type="submit" class="button button--primary">Login</button>
         </div>
-        <input
-          type="hidden"
-          name="_token"
-          value="abcdefghijklmnopqrstuvwxyz1234567890"
-        />
       </form>
     </div>
   </div>

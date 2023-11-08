@@ -3,7 +3,7 @@ slug: simple
 title: simple login form
 sidebar_label: simple
 sidebar_position: 1
-description: This is a basic login form that will POST the input values on submit and will return with an HTTP response code of `200`.
+description: This is a basic login form that will POST the input values on submit.
 ---
 
 <div class="container margin-vert--xl">
@@ -25,7 +25,6 @@ description: This is a basic login form that will POST the input values on submi
             type="text"
             id="username"
             name="username"
-            label="Username"
             placeholder="e.g. jsmith, jsmith@example.com"
             required
           />

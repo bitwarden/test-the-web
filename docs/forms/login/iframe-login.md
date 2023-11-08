@@ -3,7 +3,7 @@ slug: iframe-login
 title: iframe login form
 sidebar_label: iframe
 sidebar_position: 2
-description: This is a login form nested within an inline frame (iframe) that will POST on submit and will return with a HTTP response code of `200`.
+description: This is a login form nested within an inline frame (iframe) that will POST on submit.
 ---
 
 <iframe

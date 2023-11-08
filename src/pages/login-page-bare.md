@@ -19,9 +19,8 @@ description: basic login form used for easy embedding via iframe
       <label for="username" class="margin-right--sm">Username</label>
       <input
         type="text"
-        id="username"
         name="username"
-        label="Username"
+        id="username"
         placeholder="e.g. jsmith, jsmith@example.com"
       />
     </div>
@@ -29,8 +28,8 @@ description: basic login form used for easy embedding via iframe
       <label for="password" class="margin-right--sm">Password</label>
       <input
         type="password"
-        id="password"
         name="password"
+        id="password"
         required
       />
     </div>
