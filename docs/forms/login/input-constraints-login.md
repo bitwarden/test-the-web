@@ -15,11 +15,6 @@ description: This is a login form with input constraints that will disallow auto
         method="POST"
         action="/login"
       >
-        <input
-          type="hidden"
-          name="_token"
-          value="abcdefghijklmnopqrstuvwxyz1234567890"
-        />
         <div class="row">
           <label for="email" class="margin-right--sm">User Email</label>
           <input

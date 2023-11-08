@@ -1,8 +1,8 @@
 ---
-slug: card-payment-input
+slug: card-payment
 title: card payment form
-sidebar_label: card payment form
-description: This is a basic payment card form that will POST the input values on submit.
+sidebar_label: card
+description: This is a card payment form that will POST the input values on submit.
 ---
 
 <div class="container margin-vert--xl">
@@ -13,11 +13,6 @@ description: This is a basic payment card form that will POST the input values o
         method="POST"
         action="/payment"
       >
-        <input
-          type="hidden"
-          name="_token"
-          value="abcdefghijklmnopqrstuvwxyz1234567890"
-        />
         <div class="row">
           <div class="col col--12 margin-bottom--md">
             <label for="card-name">Name on card</label>
@@ -67,13 +62,13 @@ description: This is a basic payment card form that will POST the input values o
               id="card-cvv"
               placeholder="000"
               maxlength="4"
-              pattern="\d{4}"
+              pattern="\d{3,4}"
               title="a 3-4 digit value"
               required
             />
           </div>
         </div>
-        <hr />
+        <hr/>
         <button type="submit" class="button button--primary">Submit</button>
       </form>
     </div>

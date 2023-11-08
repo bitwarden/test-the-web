@@ -24,7 +24,7 @@ app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
     console.error(error.stack);
     response.status(500).send("Something broke!");
-  },
+  }
 );
 
 function handlePost(request: Request, response: Response, route: string) {
@@ -55,19 +55,25 @@ function handlePost(request: Request, response: Response, route: string) {
 app
   .route(ROUTES.LOGIN)
   .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.LOGIN),
+    handlePost(request, response, ROUTES.LOGIN)
   );
 
 app
   .route(ROUTES.PAYMENT)
   .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.PAYMENT),
+    handlePost(request, response, ROUTES.PAYMENT)
+  );
+
+app
+  .route(ROUTES.IDENTITY)
+  .post((request: Request, response: Response) =>
+    handlePost(request, response, ROUTES.IDENTITY)
   );
 
 try {
   const cert = fs.readFileSync(
     `${__dirname}/../${process.env.SSL_CERT}`,
-    "utf8",
+    "utf8"
   );
   const key = fs.readFileSync(`${__dirname}/../${process.env.SSL_KEY}`, "utf8");
 

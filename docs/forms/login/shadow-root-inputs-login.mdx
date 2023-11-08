@@ -5,22 +5,13 @@ sidebar_label: shadow-root inputs
 description: This login form utilizes inputs within "shadow roots". It will POST the input values on submit.
 ---
 
-import '@material/web/button/filled-button.js';
-import '@material/web/textfield/outlined-text-field.js';
+import "@material/web/button/filled-button.js";
+import "@material/web/textfield/outlined-text-field.js";
 
 <div class="container margin-vert--xl">
   <div class="row">
     <div class="card col col--12 padding--md">
-      <form
-        class="card__body"
-        method="POST"
-        action="/login"
-      >
-        <input
-          type="hidden"
-          name="_token"
-          value="abcdefghijklmnopqrstuvwxyz1234567890"
-        />
+      <form class="card__body" method="POST" action="/login">
         <div class="row margin-bottom--md">
           <md-outlined-text-field
             type="text"
@@ -43,10 +34,12 @@ import '@material/web/textfield/outlined-text-field.js';
           />
         </div>
         <div class="row">
-          <md-filled-button type="submit" class="btn btn-primary">Login</md-filled-button>
+          <md-filled-button type="submit" class="btn btn-primary">
+            Login
+          </md-filled-button>
         </div>
       </form>
     </div>
   </div>
 </div>
-<hr/>
+<hr />

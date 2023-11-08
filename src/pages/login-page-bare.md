@@ -10,11 +10,6 @@ description: basic login form used for easy embedding via iframe
     method="POST"
     action="/login"
   >
-    <input
-      type="hidden"
-      name="_token"
-      value="abcdefghijklmnopqrstuvwxyz1234567890"
-    />
     <div class="row margin-bottom--md">
       <label for="username" class="margin-right--sm">Username</label>
       <input

@@ -11,11 +11,6 @@ description: These are bare inputs without an enclosing `<form>` tag that will P
   <div class="row">
     <div class="card col col--12 padding--md">
       <div class="card__body bare-inputs-container">
-        <input
-          type="hidden"
-          name="_token"
-          value="abcdefghijklmnopqrstuvwxyz1234567890"
-        />
         <div class="row margin-bottom--md">
           <label for="username" class="margin-right--sm">Username</label>
           <input

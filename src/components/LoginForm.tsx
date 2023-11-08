@@ -61,11 +61,6 @@ export function LoginForm({
     </form>
   ) : (
     <form className="card__body" method="POST" action="/login">
-      <input
-        type="hidden"
-        name="_token"
-        value="abcdefghijklmnopqrstuvwxyz1234567890"
-      />
       <UsernameInput />
       <EmailInput />
       <PasswordInput />
