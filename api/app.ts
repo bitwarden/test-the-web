@@ -2,6 +2,7 @@ import "dotenv/config";
 const fs = require("fs");
 const express = require("express");
 import { Request, Response, NextFunction } from "express-serve-static-core";
+import { DEFAULT_COOKIE_SETTINGS, QUERY_PARAMS, ROUTES } from "./constants";
 
 const app = express();
 
@@ -26,49 +27,42 @@ app.use(
   },
 );
 
-app.route("/login").post((request: Request, response: Response) => {
+function handlePost(request: Request, response: Response, route: string) {
   const referrerURL = request.get("Referrer") || "";
   let referrerQueryParams = "";
 
+  const isLogin = route === ROUTES.LOGIN;
+  const responsePath = `/forms/response/${
+    isLogin ? "login-success" : "request-success"
+  }`;
+
   response.cookie("referrerRequestBody", JSON.stringify(request.body), {
-    path: "/forms/response/login-success",
-    sameSite: true,
-    secure: true,
-    maxAge: 1000 * 60 * 5,
+    path: responsePath,
+    ...DEFAULT_COOKIE_SETTINGS,
   });
 
   try {
     const url = new URL(referrerURL);
-    url.searchParams.append("docusaurus-data-hide-pagination", "true");
-    url.searchParams.append("docusaurus-data-hide-header", "true");
+    url.searchParams.append(QUERY_PARAMS.HIDE_PAGINATION, "true");
+    url.searchParams.append(QUERY_PARAMS.HIDE_HEADER, "true");
     referrerQueryParams = url.search;
   } catch {}
 
   // referrer query param passthrough
-  response.redirect(`/forms/response/login-success${referrerQueryParams}`);
-});
+  response.redirect(`${responsePath}${referrerQueryParams}`);
+}
 
-app.route("/payment").post((request: Request, response: Response) => {
-  const referrerURL = request.get("Referrer") || "";
-  let referrerQueryParams = "";
+app
+  .route(ROUTES.LOGIN)
+  .post((request: Request, response: Response) =>
+    handlePost(request, response, ROUTES.LOGIN),
+  );
 
-  response.cookie("referrerRequestBody", JSON.stringify(request.body), {
-    path: "/forms/response/request-success",
-    sameSite: true,
-    secure: true,
-    maxAge: 1000 * 60 * 5,
-  });
-
-  try {
-    const url = new URL(referrerURL);
-    url.searchParams.append("docusaurus-data-hide-pagination", "true");
-    url.searchParams.append("docusaurus-data-hide-header", "true");
-    referrerQueryParams = url.search;
-  } catch {}
-
-  // referrer query param passthrough
-  response.redirect(`/forms/response/request-success${referrerQueryParams}`);
-});
+app
+  .route(ROUTES.PAYMENT)
+  .post((request: Request, response: Response) =>
+    handlePost(request, response, ROUTES.PAYMENT),
+  );
 
 try {
   const cert = fs.readFileSync(
