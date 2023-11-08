@@ -111,7 +111,7 @@ const config: Config = {
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} Bitwarden Inc.`,
+        copyright: `© ${new Date().getFullYear()} Bitwarden, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,

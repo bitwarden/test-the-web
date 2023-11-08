@@ -7,5 +7,11 @@ description: This multi-step form will store user inputs of each step and will P
 
 import { LoginForm } from "@site/src/components/LoginForm";
 
-<LoginForm action="/login" isMultiStep={true} />
+<div class="container margin-vert--xl">
+  <div class="row">
+    <div class="card col col--12 padding--md">
+      <LoginForm action="/login" isMultiStep={true} />
+    </div>
+  </div>
+</div>
 <hr />

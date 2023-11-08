@@ -6,7 +6,7 @@ build
 .cache-loader
 
 # Misc
-*.log
+--write
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

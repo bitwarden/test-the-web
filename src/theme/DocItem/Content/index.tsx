@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import clsx from 'clsx';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/theme-common/internal';
-import Heading from '@theme/Heading';
-import MDXContent from '@theme/MDXContent';
-import type {Props} from '@theme/DocItem/Content';
+import clsx from "clsx";
+import { ThemeClassNames } from "@docusaurus/theme-common";
+import { useDoc } from "@docusaurus/theme-common/internal";
+import Heading from "@theme/Heading";
+import MDXContent from "@theme/MDXContent";
+import type { Props } from "@theme/DocItem/Content";
 
 /**
  Title can be declared inside md content or declared through
@@ -23,31 +23,30 @@ import type {Props} from '@theme/DocItem/Content';
  - the markdown content does not already contain a top-level h1 heading
 */
 function useSyntheticTitle(): string | null {
-  const {metadata, frontMatter, contentTitle} = useDoc();
+  const { metadata, frontMatter, contentTitle } = useDoc();
   const shouldRender =
-    !frontMatter.hide_title && typeof contentTitle === 'undefined';
+    !frontMatter.hide_title && typeof contentTitle === "undefined";
   if (!shouldRender) {
     return null;
   }
   return metadata.title;
 }
 
-export default function DocItemContent({children}: Props): JSX.Element {
+export default function DocItemContent({ children }: Props): JSX.Element {
   const syntheticTitle = useSyntheticTitle();
-  const {metadata} = useDoc();
+  const { metadata } = useDoc();
   const docDescription = metadata.description;
 
   return (
-    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}>
       {syntheticTitle && (
         <header>
-          { docDescription ? (
-            <details>
-              <summary>
-                <Heading as="h1">{syntheticTitle}</Heading>
-              </summary>
+          {docDescription ? (
+            <>
+              <Heading as="h1">{syntheticTitle}</Heading>
+              <br />
               <small>{metadata.description}</small>
-            </details>
+            </>
           ) : (
             <Heading as="h1">{syntheticTitle}</Heading>
           )}
