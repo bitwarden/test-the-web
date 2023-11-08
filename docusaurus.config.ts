@@ -77,7 +77,7 @@ const config: Config = {
         },
       },
       navbar: {
-        title: "Test the Web:",
+        title: "Test the Web",
         logo: {
           alt: "Test the Web Logo",
           src: "inlineSVG",
@@ -86,6 +86,13 @@ const config: Config = {
           className: "custom-navbar-logo-class",
         },
         items: [
+          {
+            type: "custom-angleRight",
+            height: 18,
+            width: 18,
+            position: "left",
+            className: "custom-navbar-logo-class inline-svg brand-delimiter",
+          },
           {
             type: "docSidebar",
             sidebarId: "formsSidebar",

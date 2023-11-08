@@ -130,6 +130,10 @@ html[data-hide-sidebar="true"] .theme-doc-sidebar-container {
   display: none;
 }
 
+.navbar__brand {
+  margin-right: 5px;
+}
+
 .navbar__items > a {
   display: flex;
 }
@@ -148,4 +152,9 @@ a.navbar__brand:hover .navbar__logo .custom-navbar-logo-class {
 
 .navbar .inline-svg:not(.custom-navbar-logo-class):hover {
   fill: var(--ifm-navbar-link-hover-color);
+}
+
+.navbar .inline-svg.brand-delimiter {
+  stroke: var(--ifm-color-content);
+  stroke-width: 2px;
 }
