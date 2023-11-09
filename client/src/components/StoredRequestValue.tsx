@@ -1,5 +1,5 @@
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import CodeBlock from '@theme/CodeBlock';
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import CodeBlock from "@theme/CodeBlock";
 
 function formatStringifiedValue(stringifiedJSON) {
   const decodedString = decodeURIComponent(stringifiedJSON);
@@ -12,11 +12,11 @@ export function StoredRequestValue() {
   return (
     <BrowserOnly>
       {() => {
-        const cookieKey = 'referrerRequestBody';
+        const cookieKey = "referrerRequestBody";
         const cookieValue = document.cookie
-          .split('; ')
+          .split("; ")
           .find((row) => row.startsWith(`${cookieKey}=`))
-          ?.split('=')[1];
+          ?.split("=")[1];
 
         if (!cookieValue) {
           return null;
@@ -29,7 +29,11 @@ export function StoredRequestValue() {
 
         return (
           <>
-            <CodeBlock language="json" title="Request body:" className="margin-top--md">
+            <CodeBlock
+              language="json"
+              title="Request body:"
+              className="margin-top--md"
+            >
               {requestBodyValue}
             </CodeBlock>
           </>

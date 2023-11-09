@@ -3,46 +3,26 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build:watch": "nodemon -x 'npm run build'",
-    "build": "rm -rf build && docusaurus build",
-    "clear": "docusaurus clear",
-    "deploy": "docusaurus deploy",
-    "docusaurus": "docusaurus",
     "prepare": "husky install",
-    "serve": "docusaurus serve --no-open",
-    "start": "docusaurus start --no-open",
-    "swizzle": "docusaurus swizzle",
-    "typecheck": "tsc",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "write-translations": "docusaurus write-translations"
-  },
-  "dependencies": {
-    "@docusaurus/core": "3.0.0",
-    "@docusaurus/preset-classic": "3.0.0",
-    "@material/web": "1.0.1",
-    "@mdx-js/react": "3.0.0",
-    "clsx": "1.2.1",
-    "prism-react-renderer": "2.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "postinstall": "(npm run ci:api) && (npm run ci:client)",
+    "ci:api": "cd api && npm ci",
+    "ci:client": "cd client && npm ci",
+    "build": "(npm run build:api) && (npm run build:client)",
+    "build:watch": "(cd client && npm run build:watch) & (cd api && npm run start:watch)",
+    "build:api": "cd api && npm run build",
+    "build:client": "cd client && npm run build"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.0.0",
-    "@docusaurus/tsconfig": "3.0.0",
-    "@docusaurus/types": "3.0.0",
-    "@types/react": "18.2.29",
     "cspell": "7.3.8",
     "husky": "8.0.3",
     "lint-staged": "15.0.2",
     "nodemon": "3.0.1",
     "prettier": "3.0.3",
+    "rimraf": "5.0.5",
     "typescript": "5.2.2"
   },
   "lint-staged": {
     "*": "prettier --cache --write --ignore-unknown"
-  },
-  "prettier": {
-    "trailingComma": "es5"
   },
   "browserslist": {
     "production": [
@@ -58,22 +38,5 @@
   },
   "engines": {
     "node": ">=18.0"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      ".git",
-      "**/node_modules/**",
-      "**/build/**",
-      "**/.docusaurus/**"
-    ],
-    "watch": [
-      "src/**",
-      "docs/**",
-      "pages/**",
-      "static/**",
-      "docusaurus.config.ts"
-    ],
-    "verbose": true,
-    "ext": "js,jsx,json,ts,tsx,md,mdx,css"
   }
 }

@@ -49,4 +49,4 @@ function NavbarLogo() {
   );
 }
 
-export default NavbarLogo
+export default NavbarLogo;
