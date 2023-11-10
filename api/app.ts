@@ -4,9 +4,19 @@ const express = require("express");
 import { Request, Response, NextFunction } from "express-serve-static-core";
 import { DEFAULT_COOKIE_SETTINGS, QUERY_PARAMS, ROUTES } from "./constants";
 
+const port = process.env.SERVE_PORT || 443;
+const insecurePort = process.env.SERVE_INSECURE_PORT || 80;
+const sslCertFileName = process.env.SSL_CERT;
+const sslKeyFileName = process.env.SSL_KEY;
+const staticFilesPath = process.env.STATIC_FILES_DIR || "client/build";
+
 const app = express();
 
-app.use(express.static(process.env.STATIC_FILES_DIR));
+if (staticFilesPath) {
+  app.use(express.static(`${__dirname}/../../${process.env.STATIC_FILES_DIR}`));
+} else {
+  console.warn("The static files folder could not be found.");
+}
 
 // for handling form content-types
 app.use(express.urlencoded({ extended: false }));
@@ -17,17 +27,16 @@ app.use(helmet());
 
 app.disable("x-powered-by");
 
-const port = process.env.SERVE_PORT;
-
 // error handler
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
     console.error(error.stack);
     response.status(500).send("Something broke!");
-  }
+  },
 );
 
 function handlePost(request: Request, response: Response, route: string) {
+  console.log("POST received for:", route);
   const referrerURL = request.get("Referrer") || "";
   let referrerQueryParams = "";
 
@@ -55,27 +64,24 @@ function handlePost(request: Request, response: Response, route: string) {
 app
   .route(ROUTES.LOGIN)
   .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.LOGIN)
+    handlePost(request, response, ROUTES.LOGIN),
   );
 
 app
   .route(ROUTES.PAYMENT)
   .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.PAYMENT)
+    handlePost(request, response, ROUTES.PAYMENT),
   );
 
 app
   .route(ROUTES.IDENTITY)
   .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.IDENTITY)
+    handlePost(request, response, ROUTES.IDENTITY),
   );
 
 try {
-  const cert = fs.readFileSync(
-    `${__dirname}/../${process.env.SSL_CERT}`,
-    "utf8"
-  );
-  const key = fs.readFileSync(`${__dirname}/../${process.env.SSL_KEY}`, "utf8");
+  const cert = fs.readFileSync(`${__dirname}/../${sslCertFileName}`, "utf8");
+  const key = fs.readFileSync(`${__dirname}/../${sslKeyFileName}`, "utf8");
 
   const https = require("https");
   const credentials = { key, cert };
@@ -85,7 +91,9 @@ try {
     console.log(`SSL-enabled app server listening on port ${port}`);
   });
 } catch {
-  app.listen(port, () => {
-    console.log(`app server listening on port ${port}`);
-  });
+  console.log("local certs were not found");
 }
+
+app.listen(insecurePort, () => {
+  console.log(`app server listening on (insecure) port ${insecurePort}`);
+});
