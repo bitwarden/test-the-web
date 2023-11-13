@@ -79,6 +79,7 @@
 }
 
 select,
+input:not([type]), /* text type is stripped from built html */
 input[type="url"],
 input[type="email"],
 input[type="tel"],
@@ -95,6 +96,7 @@ input[type="text"] {
 }
 
 select:hover,
+input:not([type]):hover, /* text type is stripped from built html */
 input[type="url"]:hover,
 input[type="email"]:hover,
 input[type="tel"]:hover,
@@ -105,6 +107,7 @@ input[type="text"]:hover {
 }
 
 select:focus,
+input:not([type]):focus, /* text type is stripped from built html */
 input[type="url"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
@@ -112,6 +115,7 @@ input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="text"]:focus,
 select:active,
+input:not([type]):active, /* text type is stripped from built html */
 input[type="url"]:active,
 input[type="email"]:active,
 input[type="tel"]:active,

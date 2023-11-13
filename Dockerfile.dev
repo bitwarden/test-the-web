@@ -5,6 +5,7 @@ WORKDIR /usr/app
 COPY . .
 RUN npm ci
 RUN npm run build
+# CMD ["sh", "scripts/generate-certs.sh"]
 
 FROM node:${NODE_VERSION}-alpine
 WORKDIR /usr/app
@@ -15,4 +16,3 @@ COPY --from=build /usr/app/api/ssl.crt ./api/ssl.crt
 COPY --from=build /usr/app/api/ssl.key ./api/ssl.key
 COPY --from=build /usr/app/api/.env ./.env
 CMD ["node", "api/build/app.js"]
-EXPOSE 443
