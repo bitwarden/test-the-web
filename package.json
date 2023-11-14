@@ -13,7 +13,7 @@
     "build:client": "cd client && npm run build"
   },
   "devDependencies": {
-    "cspell": "7.3.8",
+    "cspell": "8.0.0",
     "husky": "8.0.3",
     "lint-staged": "15.0.2",
     "nodemon": "3.0.1",
