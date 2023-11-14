@@ -1,9 +1,3 @@
-export const DEFAULT_COOKIE_SETTINGS = {
-  sameSite: true,
-  secure: true,
-  maxAge: 1000 * 60 * 5,
-};
-
 export const ROUTES = {
   IDENTITY: "/identity",
   LOGIN: "/login",

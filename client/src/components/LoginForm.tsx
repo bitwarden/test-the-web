@@ -8,6 +8,12 @@ const FormSteps = {
 
 type FormSteps = (typeof FormSteps)[keyof typeof FormSteps];
 
+type FormValues = {
+  username?: string;
+  email?: string;
+  password?: string;
+};
+
 export function LoginForm({
   action,
   isMultiStep = false,
@@ -15,7 +21,7 @@ export function LoginForm({
   action: string;
   isMultiStep?: boolean;
 }): JSX.Element {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState<SetStateAction<FormValues>>({});
   const [currentFormStep, setCurrentFormStep] =
     useState<SetStateAction<FormSteps | undefined>>();
 
@@ -36,10 +42,10 @@ export function LoginForm({
     }
   }, [formValues]);
 
-  function handleFormStep(event) {
+  function handleFormStep(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
     setFormValues({ ...formValues, ...Object.fromEntries(formData as any) });
   }
 
@@ -126,7 +132,7 @@ function FormButton({ label }: { label: string }) {
   );
 }
 
-function submitFormData(action, data) {
+function submitFormData(action: string, data: FormValues | {}) {
   fetch(action, {
     method: "POST",
     headers: {

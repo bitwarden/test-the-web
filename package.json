@@ -1,16 +1,31 @@
 {
-  "name": "test-the-web",
+  "name": "@bitwarden/test-the-web",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitwarden/test-the-web.git"
+  },
+  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/bitwarden/test-the-web/issues"
+  },
   "private": true,
   "scripts": {
-    "prepare": "husky install",
-    "postinstall": "(npm run ci:api) && (npm run ci:client)",
+    "build:api": "cd api && npm run build",
+    "build:client": "cd client && npm run build",
+    "build:watch": "(cd client && npm run build:watch) & (cd api && npm run start:watch)",
+    "build": "(npm run build:api) && (npm run build:client)",
     "ci:api": "cd api && npm ci",
     "ci:client": "cd client && npm ci",
-    "build": "(npm run build:api) && (npm run build:client)",
-    "build:watch": "(cd client && npm run build:watch) & (cd api && npm run start:watch)",
-    "build:api": "cd api && npm run build",
-    "build:client": "cd client && npm run build"
+    "lint": "prettier --check .",
+    "postinstall": "(npm run ci:api) && (npm run ci:client)",
+    "prepare": "husky install",
+    "prettier": "prettier --write .",
+    "spellcheck": "cspell lint \"**/*.md{x,}\"",
+    "typecheck:api": "cd api && npm run typecheck",
+    "typecheck:client": "cd client && npm run typecheck",
+    "typecheck": "(npm run typecheck:api) && (npm run typecheck:client)"
   },
   "devDependencies": {
     "cspell": "8.0.0",
@@ -22,7 +37,23 @@
     "typescript": "5.2.2"
   },
   "lint-staged": {
-    "*": "prettier --cache --write --ignore-unknown"
+    "*": "prettier --cache --write --ignore-unknown",
+    "*.md{x,}": "cspell lint"
+  },
+  "cspell": {
+    "version": "0.2",
+    "useGitignore": true,
+    "dictionaries": [
+      "custom-words"
+    ],
+    "dictionaryDefinitions": [
+      {
+        "name": "custom-words",
+        "path": "./custom-words.txt",
+        "addWords": true
+      }
+    ],
+    "languageId": "typescript,javascript,html,css,markdown,mdx"
   },
   "browserslist": {
     "production": [

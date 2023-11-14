@@ -1,10 +1,10 @@
 import Link from "@docusaurus/Link";
 
-type InlineSVGProps = {
+export type InlineSVGProps = {
   href?: string;
   Svg: any;
-  width: string | number;
-  height: string | number;
+  width?: string | number;
+  height?: string | number;
   label: string;
   children?: JSX.Element;
   className?: string;

@@ -5,9 +5,10 @@
   "main": "app.ts",
   "scripts": {
     "build": "rimraf build && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:watch": "nodemon -x 'npm run start'",
     "start": "npm run build && node build/app.js",
-    "start:watch": "nodemon -x 'npm run start'"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "dotenv": "16.3.1",

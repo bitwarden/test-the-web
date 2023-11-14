@@ -2,7 +2,7 @@ import "dotenv/config";
 const fs = require("fs");
 const express = require("express");
 import { Request, Response, NextFunction } from "express-serve-static-core";
-import { DEFAULT_COOKIE_SETTINGS, QUERY_PARAMS, ROUTES } from "./constants";
+import { QUERY_PARAMS, ROUTES } from "./constants";
 
 const port = process.env.SERVE_PORT || 443;
 const insecurePort = process.env.SERVE_INSECURE_PORT || 80;
@@ -50,7 +50,9 @@ function handleRequest(request: Request, response: Response, route: string) {
 
   response.cookie("referrerRequestBody", JSON.stringify(request.body), {
     path: responsePath,
-    ...DEFAULT_COOKIE_SETTINGS,
+    sameSite: "strict",
+    secure: true,
+    maxAge: 1000 * 60 * 5,
   });
 
   try {

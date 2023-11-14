@@ -1,9 +1,10 @@
 import ComponentTypes from "@theme-original/NavbarItem/ComponentTypes";
-import { InlineSVG } from "@site/src/components/InlineSVG";
+import { InlineSVG, InlineSVGProps } from "@site/src/components/InlineSVG";
 import GithubLogo from "@site/static/img/icons/github.svg";
 import AngleRight from "@site/static/img/icons/angle-right.svg";
+import { Props as NavbarItemType } from "@theme/NavbarItem";
 
-function GithubIcon(props) {
+function GithubIcon(props: NavbarItemType & InlineSVGProps): JSX.Element {
   return <InlineSVG {...{ ...props, Svg: GithubLogo }} />;
 }
 
