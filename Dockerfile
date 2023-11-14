@@ -11,5 +11,5 @@ WORKDIR /usr/app
 COPY --from=build /usr/app/client/build ./client/build
 COPY --from=build /usr/app/api/build ./api/build
 COPY --from=build /usr/app/api/node_modules ./api/node_modules
-COPY --from=build /usr/app/api/.env ./.env
+COPY --from=build /usr/app/api/.en[v] ./
 CMD ["node", "api/build/app.js"]
