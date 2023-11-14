@@ -13,7 +13,7 @@ const staticFilesPath = process.env.STATIC_FILES_DIR || "client/build";
 const app = express();
 
 if (staticFilesPath) {
-  app.use(express.static(`${__dirname}/../../${process.env.STATIC_FILES_DIR}`));
+  app.use(express.static(`${__dirname}/../../${staticFilesPath}`));
 } else {
   console.warn("The static files folder could not be found.");
 }
@@ -35,12 +35,15 @@ app.use(
   },
 );
 
-function handlePost(request: Request, response: Response, route: string) {
-  console.log("POST received for:", route);
+function handleRequest(request: Request, response: Response, route: string) {
+  console.log(`${request.method} received for:`, route);
+
   const referrerURL = request.get("Referrer") || "";
   let referrerQueryParams = "";
 
   const isLogin = route === ROUTES.LOGIN;
+
+  // @TODO enable fail case
   const responsePath = `/forms/response/${
     isLogin ? "login-success" : "request-success"
   }`;
@@ -62,21 +65,21 @@ function handlePost(request: Request, response: Response, route: string) {
 }
 
 app
+  .route(ROUTES.IDENTITY)
+  .post((request: Request, response: Response) =>
+    handleRequest(request, response, ROUTES.IDENTITY),
+  );
+
+app
   .route(ROUTES.LOGIN)
   .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.LOGIN),
+    handleRequest(request, response, ROUTES.LOGIN),
   );
 
 app
   .route(ROUTES.PAYMENT)
   .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.PAYMENT),
-  );
-
-app
-  .route(ROUTES.IDENTITY)
-  .post((request: Request, response: Response) =>
-    handlePost(request, response, ROUTES.IDENTITY),
+    handleRequest(request, response, ROUTES.PAYMENT),
   );
 
 try {
