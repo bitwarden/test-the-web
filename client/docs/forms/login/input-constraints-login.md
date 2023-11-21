@@ -2,7 +2,7 @@
 slug: input-constraints-login
 title: login form with input constraints
 sidebar_label: input constraints
-description: This is a login form with input constraints that will disallow automated or manual entry of non-matching value patterns. It will POST the input values on submit.
+description: a login form with input constraints that will disallow automated or manual entry of non-matching value patterns - it will POST the input values on submit
 ---
 
 <script src="/js/input-constraints-login.js" defer="defer"></script>

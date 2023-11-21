@@ -2,7 +2,7 @@
 slug: bare-inputs-login
 title: login inputs without an enclosing form
 sidebar_label: bare inputs
-description: These are bare inputs without an enclosing `<form>` tag that will POST the input values on submit (via `fetch`).
+description: bare inputs without an enclosing `<form>` tag that will POST the input values on submit (via `fetch`)
 ---
 
 <script src="/js/bare-inputs-login.js" defer="defer"></script>
@@ -36,6 +36,5 @@ description: These are bare inputs without an enclosing `<form>` tag that will P
       </div>
     </div>
   </div>
-
 </div>
 <hr/>

@@ -3,7 +3,7 @@ slug: simple-search
 title: simple search form
 sidebar_label: simple
 sidebar_position: 1
-description: This is a search login form that will POST on submit.
+description: a search login form that will POST on submit
 ---
 
 <div class="container margin-vert--xl">

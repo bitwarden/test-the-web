@@ -2,7 +2,7 @@
 slug: address-na
 title: address form (North America)
 sidebar_label: address (NA)
-description: This is an address form for North America that will POST on submit.
+description: an address form for North America that will POST on submit
 ---
 
 <div class="container margin-vert--xl">
