@@ -1,13 +1,18 @@
-import "dotenv/config";
 const fs = require("fs");
 const express = require("express");
 import { Request, Response, NextFunction } from "express-serve-static-core";
-import { QUERY_PARAMS, ROUTES } from "./constants";
+import {
+  COOKIE_OPTIONS,
+  QUERY_PARAMS,
+  ROUTES,
+  STORED_VALUE_KEYS,
+} from "./constants";
 
+import "dotenv/config";
 const port = process.env.SERVE_PORT || 443;
 const insecurePort = process.env.SERVE_INSECURE_PORT || 80;
-const sslCertFileName = process.env.SSL_CERT;
-const sslKeyFileName = process.env.SSL_KEY;
+const sslCertFileName = process.env.SSL_CERT || "ssl.crt";
+const sslKeyFileName = process.env.SSL_KEY || "ssl.key";
 const staticFilesPath = process.env.STATIC_FILES_DIR || "client/build";
 
 const app = express();
@@ -35,7 +40,12 @@ app.use(
   },
 );
 
-function handleRequest(request: Request, response: Response, route: string) {
+function handleRequest(
+  request: Request,
+  response: Response,
+  route: string,
+  responseBody?: object,
+) {
   console.log(`${request.method} received for:`, route);
 
   const referrerURL = request.get("Referrer") || "";
@@ -48,12 +58,24 @@ function handleRequest(request: Request, response: Response, route: string) {
     isLogin ? "login-success" : "request-success"
   }`;
 
-  response.cookie("referrerRequestBody", JSON.stringify(request.body), {
+  const responseCookieOptions = {
     path: responsePath,
-    sameSite: "strict",
-    secure: true,
-    maxAge: 1000 * 60 * 5,
-  });
+    ...COOKIE_OPTIONS,
+  };
+
+  response.cookie(
+    STORED_VALUE_KEYS.REFERRER_REQUEST_BODY,
+    JSON.stringify(request.body),
+    responseCookieOptions,
+  );
+
+  if (responseBody) {
+    response.cookie(
+      STORED_VALUE_KEYS.REQUEST_RESPONSE_BODY,
+      JSON.stringify(responseBody),
+      responseCookieOptions,
+    );
+  }
 
   try {
     const url = new URL(referrerURL);
@@ -83,6 +105,13 @@ app
   .post((request: Request, response: Response) =>
     handleRequest(request, response, ROUTES.PAYMENT),
   );
+
+app.route(ROUTES.SEARCH).post((request: Request, response: Response) =>
+  handleRequest(request, response, ROUTES.SEARCH, {
+    success: true,
+    data: [],
+  }),
+);
 
 try {
   const cert = fs.readFileSync(`${__dirname}/../${sslCertFileName}`, "utf8");

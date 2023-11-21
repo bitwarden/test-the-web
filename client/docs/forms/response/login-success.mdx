@@ -4,9 +4,11 @@ title: Login Success
 sidebar_label: login success
 ---
 
-import { StoredRequestValue } from "@site/src/components/StoredRequestValue";
+import { StoredRequestBody } from "@site/src/components/StoredValue";
 
 <div class="card col col--12 padding--md">
   <span>Login was successful!</span>
-  <StoredRequestValue />
+  <div className="margin-top--md">
+    <StoredRequestBody />
+  </div>
 </div>

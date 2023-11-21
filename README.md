@@ -20,7 +20,7 @@ Test the Web enables anyone to quickly test common browser interactions on the w
 
 ## That, but with more options
 
-Optionally, you can change some configurations by creating a dotfile named `.env` in the `/api` directory (see `.env.example` for details). All the other usual configuration options around Node.js, Docker, [Express](https://expressjs.com/), [Docusaurus](https://docusaurus.io/), etc. apply.
+Optionally, you can override some configurations by creating a dotfile named `.env` in the `/api` directory (see `.env.example` for details). All the other usual configuration options around Node.js, Docker, [Express](https://expressjs.com/), [Docusaurus](https://docusaurus.io/), etc. apply.
 
 ## SSL / Self-signed certificates
 

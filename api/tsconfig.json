@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "alwaysStrict": true,
+    "checkJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",

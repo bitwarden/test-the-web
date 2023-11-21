@@ -4,9 +4,15 @@ title: Request Success
 sidebar_label: request success
 ---
 
-import { StoredRequestValue } from "@site/src/components/StoredRequestValue";
+import {
+  StoredRequestBody,
+  StoredResponseBody,
+} from "@site/src/components/StoredValue";
 
 <div class="card col col--12 padding--md">
   <span>Request was successful!</span>
-  <StoredRequestValue />
+  <div className="margin-top--md">
+    <StoredRequestBody />
+    <StoredResponseBody />
+  </div>
 </div>
