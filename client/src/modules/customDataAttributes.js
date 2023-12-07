@@ -23,13 +23,13 @@ export default module = {
             if (searchKey.startsWith(`${DataQueryStringPrefixKey}`)) {
               var key = searchKey.replace(
                 `${DataQueryStringPrefixKey}`,
-                "data-"
+                "data-",
               );
               document.documentElement.setAttribute(key, value);
 
               // Don't remove the attribute if it's part of a present query string
               attributesToRemove = attributesToRemove.filter(
-                (attributeKey) => attributeKey !== key
+                (attributeKey) => attributeKey !== key,
               );
             }
           }

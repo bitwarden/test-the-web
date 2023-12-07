@@ -1,6 +1,6 @@
 !(function () {
   const submitButton = document.querySelector(
-    'button[type="submit"]#bare-inputs-submit'
+    'button[type="submit"]#bare-inputs-submit',
   );
 
   submitButton.addEventListener("click", async (event) => {
@@ -12,7 +12,7 @@
 
     const data = Array(...inputs).reduce(
       (postBody, { name, value }) => ({ ...postBody, [name]: value }),
-      {}
+      {},
     );
 
     const response = await fetch("/login", {
