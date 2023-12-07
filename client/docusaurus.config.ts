@@ -11,7 +11,7 @@ const {
 /** @type {import('@docusaurus/types').Config} */
 const config: Config = {
   title: "Test the Web",
-  favicon: "img/favicon.png",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
   url: "https://bitwarden.com",
@@ -73,11 +73,16 @@ const config: Config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
+      colorMode: {
+        defaultMode: "dark",
+        respectPrefersColorScheme: true,
+      },
       docs: {
         sidebar: {
           hideable: true,
         },
       },
+      image: "img/logo-512x512.png",
       navbar: {
         title: "Test the Web",
         logo: {
