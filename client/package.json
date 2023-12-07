@@ -30,9 +30,6 @@
     "@docusaurus/types": "3.0.0",
     "@types/react": "18.2.38"
   },
-  "prettier": {
-    "trailingComma": "es5"
-  },
   "browserslist": {
     "production": [
       ">0.5%",
