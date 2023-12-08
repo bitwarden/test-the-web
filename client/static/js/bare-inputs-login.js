@@ -3,7 +3,7 @@
     'button[type="submit"]#bare-inputs-submit',
   );
 
-  submitButton.addEventListener("click", async (event) => {
+  submitButton.addEventListener("click", async () => {
     const inputs = document.querySelectorAll(".bare-inputs-container input");
 
     if (!inputs.length) {

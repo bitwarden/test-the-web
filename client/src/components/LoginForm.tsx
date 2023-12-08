@@ -17,9 +17,13 @@ type FormValues = {
 export function LoginForm({
   action,
   isMultiStep = false,
+  stepButtonLabel = "Next",
+  submitButtonLabel = "Submit",
 }: {
   action: string;
   isMultiStep?: boolean;
+  stepButtonLabel?: string;
+  submitButtonLabel?: string;
 }): JSX.Element {
   const [formValues, setFormValues] = useState<SetStateAction<FormValues>>({});
   const [currentFormStep, setCurrentFormStep] =
@@ -62,7 +66,11 @@ export function LoginForm({
       )}
 
       <FormButton
-        label={currentFormStep === FormSteps.Password ? "Submit" : "Next"}
+        label={
+          currentFormStep === FormSteps.Password
+            ? submitButtonLabel
+            : stepButtonLabel
+        }
       />
     </form>
   ) : (
@@ -71,7 +79,7 @@ export function LoginForm({
       <EmailInput />
       <PasswordInput />
       <div className="row">
-        <FormButton label="Login" />
+        <FormButton label={submitButtonLabel} />
       </div>
     </form>
   );
@@ -132,7 +140,7 @@ function FormButton({ label }: { label: string }) {
   );
 }
 
-function submitFormData(action: string, data: FormValues | {}) {
+function submitFormData(action: string, data: FormValues | object) {
   fetch(action, {
     method: "POST",
     headers: {
