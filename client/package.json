@@ -2,11 +2,13 @@
   "name": "test-the-web-client",
   "version": "0.0.0",
   "scripts": {
+    "axe": "axe",
     "build:watch": "nodemon -x 'npm run build'",
     "build": "rimraf -rf build && docusaurus build",
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
+    "lint:a11y": "NODE_EXTRA_CA_CERTS=../api/ssl.crt node ./scripts/lint-a11y.js",
     "serve": "docusaurus serve --no-open",
     "start": "docusaurus start --no-open",
     "swizzle": "docusaurus swizzle",
@@ -25,6 +27,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@axe-core/cli": "4.8.2",
     "@docusaurus/module-type-aliases": "3.0.1",
     "@docusaurus/tsconfig": "3.0.1",
     "@docusaurus/types": "3.0.1",
