@@ -124,7 +124,8 @@ try {
   httpsServer.listen(port, () => {
     console.log(`SSL-enabled app server listening on port ${port}`);
   });
-} catch {
+} catch (error) {
+  console.log("error: ", error);
   console.log("local certs were not found");
 }
 
