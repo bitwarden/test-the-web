@@ -7,6 +7,7 @@ RUN npm ci
 RUN npm run build
 
 FROM node:${NODE_VERSION}-alpine
+LABEL org.opencontainers.image.source="https://github.com/bitwarden/test-the-web"
 WORKDIR /usr/app
 COPY --from=build /usr/app/client/build ./client/build
 COPY --from=build /usr/app/api/build ./api/build

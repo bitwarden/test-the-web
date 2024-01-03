@@ -1,5 +1,5 @@
 ---
-name: Docker Image
+name: Build and push Docker image
 
 on:
   push:
@@ -7,11 +7,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  push-image:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
-      - name: Build the Docker image
-        run: docker build . -f Dockerfile -t test-the-web:$(date +%s)
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Build and push the Docker image
+        run: |
+          docker build . -f Dockerfile -t ghcr.io/bitwarden/test-the-web:latest
+          docker push ghcr.io/bitwarden/test-the-web:latest
