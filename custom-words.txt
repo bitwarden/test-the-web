@@ -4,3 +4,4 @@ jsmith
 keyserver
 sandboxed
 TOTP
+typeless

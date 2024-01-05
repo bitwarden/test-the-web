@@ -1,9 +1,8 @@
 ---
-slug: simple-search
-title: simple search form
-sidebar_label: simple
-sidebar_position: 1
-description: a search form that will POST on submit
+slug: typeless-search
+title: typeless search input
+sidebar_label: typeless
+description: a search input with no `type` attribute within a search form that will POST on submit
 ---
 
 <div class="container margin-vert--xl">
@@ -18,14 +17,9 @@ description: a search form that will POST on submit
         <div class="row">
           <div class="col col--12">
             <input
-              type="search"
               class="col col--6 margin-right--sm"
-              id="search"
-              name="q"
-              autocapitalize="off"
-              autocorrect="off"
-              spellcheck="true"
-              placeholder="e.g. 'cats playing keyboards'"
+              id="globalSearch23"
+              placeholder="Enter a product code or type"
             />
             <button type="submit" class="col col--2 button button--primary">Go</button>
           </div>
