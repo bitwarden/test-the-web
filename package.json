@@ -20,7 +20,7 @@
     "ci:client": "cd client && npm ci",
     "lint": "prettier --check .",
     "postinstall": "(npm run ci:api) && (npm run ci:client)",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --write .",
     "spellcheck": "cspell lint \"**/*.md{x,}\"",
     "typecheck:api": "cd api && npm run typecheck",
