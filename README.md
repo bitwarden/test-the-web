@@ -13,8 +13,8 @@ Test the Web enables anyone to quickly test common browser interactions on the w
   - with Node/npm:
     - `npm ci && npm run build:watch`
   - with Docker:
-    - `docker build -f Dockerfile . -t test-the-web:dev`
-    - `docker run -d -p 443:443 -p 80:80 test-the-web:dev`
+    - `docker build -f Dockerfile.dev . -t test-the-web:dev`
+    - `docker run -d -p --name test-the-web 443:443 -p 80:80 test-the-web:dev`
 - go to `http://localhost`
 - start testing!
 
