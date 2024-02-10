@@ -32,7 +32,7 @@
     "@material/web": "1.2.0",
     "cspell": "8.3.2",
     "husky": "9.0.10",
-    "lint-staged": "15.2.1",
+    "lint-staged": "15.2.2",
     "nodemon": "3.0.3",
     "prettier": "3.2.5",
     "rimraf": "5.0.5",
