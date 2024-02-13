@@ -14,13 +14,13 @@
       "matchUpdateTypes": ["minor", "patch"]
     },
     {
-      "groupName": "npm minor",
-      "matchManagers": ["npm"],
+      "groupName": "gh minor",
+      "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"]
     },
     {
-      "groupName": "gh minor",
-      "matchManagers": ["github-actions"],
+      "groupName": "npm minor",
+      "matchManagers": ["npm"],
       "matchUpdateTypes": ["minor", "patch"]
     }
   ]
