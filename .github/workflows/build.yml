@@ -4,11 +4,11 @@ name: Build API/client files
 on:
   workflow_dispatch:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
     paths-ignore:
       - ".github/workflows/**"
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     paths-ignore:
       - ".github/workflows/**"
 

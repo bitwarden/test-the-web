@@ -3,6 +3,3 @@ build
 dist
 node_modules
 .docusaurus
-
-# Github Workflows
-.github/workflows
