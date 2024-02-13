@@ -20,20 +20,20 @@
     "@docusaurus/core": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
     "@material/web": "1.2.0",
-    "@mdx-js/react": "3.0.0",
+    "@mdx-js/react": "3.0.1",
     "clsx": "2.1.0",
     "prism-react-renderer": "2.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@axe-core/cli": "4.8.4",
+    "@axe-core/cli": "4.8.5",
     "@docusaurus/module-type-aliases": "3.1.1",
     "@docusaurus/tsconfig": "3.1.1",
     "@docusaurus/types": "3.1.1",
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
-    "@types/react": "18.2.53"
+    "@types/react": "18.2.55"
   },
   "browserslist": {
     "production": [
