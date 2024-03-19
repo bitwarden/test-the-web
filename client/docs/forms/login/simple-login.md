@@ -27,6 +27,7 @@ description: a basic login form that will POST the input values on submit
         <div class="row margin-bottom--md">
           <label for="password" class="margin-right--sm">Password</label>
           <input
+            autocomplete="password"
             type="password"
             id="password"
             name="password"
