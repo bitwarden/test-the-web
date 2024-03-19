@@ -1,6 +1,7 @@
 import { CookieOptions } from "express-serve-static-core";
 
 export const ROUTES = {
+  ACCOUNT: "/account",
   IDENTITY: "/identity",
   LOGIN: "/login",
   PAYMENT: "/payment",
