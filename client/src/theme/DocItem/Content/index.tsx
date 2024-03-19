@@ -7,6 +7,7 @@
 
 import clsx from "clsx";
 import { ThemeClassNames } from "@docusaurus/theme-common";
+import { DocFrontMatter } from "@docusaurus/plugin-content-docs";
 import { useDoc } from "@docusaurus/theme-common/internal";
 import Heading from "@theme/Heading";
 import MDXContent from "@theme/MDXContent";
@@ -32,10 +33,13 @@ function useSyntheticTitle(): string | null {
   return metadata.title;
 }
 
+type ExtendedDocFrontMatter = DocFrontMatter & { as_seen_on: string };
+
 export default function DocItemContent({ children }: Props): JSX.Element {
   const syntheticTitle = useSyntheticTitle();
-  const { metadata } = useDoc();
+  const { metadata, frontMatter } = useDoc();
   const docDescription = metadata.description;
+  const { as_seen_on: asSeenOn } = frontMatter as ExtendedDocFrontMatter;
 
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}>
@@ -45,7 +49,16 @@ export default function DocItemContent({ children }: Props): JSX.Element {
             <>
               <Heading as="h1">{syntheticTitle}</Heading>
               <br />
-              <small>{metadata.description}</small>
+              {asSeenOn && (
+                <>
+                  <small>
+                    <em>(As seen on {asSeenOn})</em>
+                  </small>
+                  <br />
+                  <br />
+                </>
+              )}
+              <div>{metadata.description}</div>
             </>
           ) : (
             <Heading as="h1">{syntheticTitle}</Heading>
