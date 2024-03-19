@@ -1,5 +1,5 @@
 {
-  "label": "Account updates",
+  "label": "Update",
   "link": {
     "type": "generated-index",
     "description": "Common patterns for authentication update forms"
