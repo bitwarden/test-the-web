@@ -55,6 +55,17 @@
         "addWords": true
       }
     ],
+    "patterns": [
+      {
+        "name": "as-seen-on-locations",
+        "pattern": "/as_seen_on: .*/g"
+      }
+    ],
+    "ignoreRegExpList": [
+      "as-seen-on-locations",
+      "Email",
+      "Urls"
+    ],
     "languageId": "typescript,javascript,html,css,markdown,mdx"
   },
   "browserslist": {
