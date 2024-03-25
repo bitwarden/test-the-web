@@ -43,7 +43,7 @@ description: a form allowing a user to update their password, with basic input v
           />
         </div>
         <div class="row margin-bottom--md">
-          <label for="masterPasswordRetype" class="col col--3">Confirm new password</label>
+          <label for="newPasswordRetype" class="col col--3">Confirm new password</label>
           <input
             autocapitalize="none"
             autocomplete="new-password"
