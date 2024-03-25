@@ -6,6 +6,7 @@ import {
   QUERY_PARAMS,
   ROUTES,
   STORED_VALUE_KEYS,
+  mockSearchData,
 } from "./constants";
 
 import "dotenv/config";
@@ -106,12 +107,21 @@ app
     handleRequest(request, response, ROUTES.PAYMENT),
   );
 
-app.route(ROUTES.SEARCH).post((request: Request, response: Response) =>
-  handleRequest(request, response, ROUTES.SEARCH, {
+app.route(ROUTES.SEARCH).post((request: Request, response: Response) => {
+  const returnDataStart = ~~(Math.random() * mockSearchData.length);
+  const returnDataLength = ~~(
+    Math.random() *
+    (mockSearchData.length - returnDataStart)
+  );
+
+  return handleRequest(request, response, ROUTES.SEARCH, {
     success: true,
-    data: [],
-  }),
-);
+    data: mockSearchData.slice(
+      returnDataStart,
+      returnDataStart + returnDataLength,
+    ),
+  });
+});
 
 try {
   const cert = fs.readFileSync(`${__dirname}/../${sslCertFileName}`, "utf8");

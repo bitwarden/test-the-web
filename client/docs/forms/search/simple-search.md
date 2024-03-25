@@ -3,7 +3,7 @@ slug: simple-search
 title: simple search form
 sidebar_label: simple
 sidebar_position: 1
-description: a search form that will POST on submit
+description: a search form that will POST on submit and receive a response with mock data
 ---
 
 <div class="container margin-vert--xl">
