@@ -18,7 +18,6 @@ description: a sign up form requiring an email and password - it will POST the i
             <label for="email">Enter the email you'd like to create an account with</label>
             <br/>
             <input
-              aria-required="true"
               autocomplete="email"
               id="email"
               name="email"
@@ -31,7 +30,6 @@ description: a sign up form requiring an email and password - it will POST the i
             <label for="password">Create a password</label>
             <br/>
             <input
-              aria-required="true"
               autocomplete="new-password"
               id="password"
               name="password"
