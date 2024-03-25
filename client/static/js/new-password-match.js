@@ -1,10 +1,11 @@
 !(function () {
   const form = document.querySelector("form.card__body");
+  const formButton = form.querySelector('button[type="submit"]');
+  const newPassword = document.querySelector("input#newPassword");
+  const newPasswordRetype = document.querySelector("input#newPasswordRetype");
+  const errorContainer = document.querySelector("#error-container");
 
   function isFormInputValid() {
-    const newPassword = document.querySelector("input#newPassword");
-    const newPasswordRetype = document.querySelector("input#newPasswordRetype");
-
     return (
       newPassword?.value?.length &&
       newPassword?.value === newPasswordRetype?.value
@@ -23,11 +24,9 @@
 
   form.addEventListener("change", () => {
     const formIsValid = isFormInputValid();
-    const newPassword = document.querySelector("input#newPassword");
-    const errorContainer = document.querySelector("#error-container");
     const shouldDisplayError = newPassword?.value?.length && !formIsValid;
 
-    form.querySelector('button[type="submit"]').disabled = !formIsValid;
+    formButton.disabled = !formIsValid;
 
     errorContainer.style.display = shouldDisplayError ? "inline-block" : "none";
   });
