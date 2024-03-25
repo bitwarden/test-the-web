@@ -18,9 +18,7 @@ description: a form allowing a user to update their password, with basic input v
         <div class="row margin-bottom--md">
           <label for="currentPassword" class="col col--3">Current password</label>
           <input
-            autocapitalize="none"
             autocomplete="current-password"
-            autocorrect="none"
             id="currentPassword"
             name="currentPassword"
             required
@@ -32,9 +30,7 @@ description: a form allowing a user to update their password, with basic input v
         <div class="row margin-bottom--md">
           <label for="newPassword" class="col col--3">New password</label>
           <input
-            autocapitalize="none"
             autocomplete="new-password"
-            autocorrect="none"
             id="newPassword"
             name="newPassword"
             required
@@ -45,9 +41,7 @@ description: a form allowing a user to update their password, with basic input v
         <div class="row margin-bottom--md">
           <label for="newPasswordRetype" class="col col--3">Confirm new password</label>
           <input
-            autocapitalize="none"
             autocomplete="new-password"
-            autocorrect="none"
             id="newPasswordRetype"
             name="newPasswordRetype"
             required
