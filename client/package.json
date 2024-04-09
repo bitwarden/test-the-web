@@ -31,6 +31,7 @@
     "@docusaurus/module-type-aliases": "3.2.0",
     "@docusaurus/tsconfig": "3.2.0",
     "@docusaurus/types": "3.2.0",
+    "@emotion/babel-plugin": "11.11.0",
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.5",
     "@types/react": "18.2.73"

@@ -49,6 +49,12 @@ function handleRequest(
 ) {
   console.log(`${request.method} received for:`, route);
 
+  if (request.body?.returnType === "json") {
+    response.json(responseBody);
+
+    return;
+  }
+
   const referrerURL = request.get("Referrer") || "";
   let referrerQueryParams = "";
 
