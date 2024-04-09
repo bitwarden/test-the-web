@@ -1,20 +1,15 @@
 !(function () {
   const submitButton = document.querySelector(
-    'button[type="submit"]#bare-inputs-submit',
+    'button[type="submit"]#search-submit',
   );
-  const inputs = document.querySelectorAll(".bare-inputs-container input");
+  const input = document.querySelector("input.typeless-search-input");
 
   submitButton.addEventListener("click", async () => {
-    if (!inputs.length) {
+    if (!input) {
       return;
     }
 
-    const data = Array(...inputs).reduce(
-      (postBody, { name, value }) => ({ ...postBody, [name]: value }),
-      {},
-    );
-
-    const response = await fetch("/login", {
+    const response = await fetch("/search", {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
@@ -22,7 +17,7 @@
         "Content-Type": "application/json",
       },
       redirect: "follow",
-      body: JSON.stringify(data),
+      body: JSON.stringify({ q: input.value }),
     });
 
     if (response.redirected) {
