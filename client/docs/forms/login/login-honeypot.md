@@ -1,9 +1,9 @@
 ---
-slug: simple
-title: simple login form
-sidebar_label: simple
-sidebar_position: 1
-description: a basic login form that will POST the input values on submit
+slug: login-honeypot
+title: login form with honeypots
+sidebar_label: honeypot login
+description: a login form with hidden "honeypot" inputs (for bot detection) that should remain empty - it will POST the input values on submit
+as_seen_on: paypal.com
 ---
 
 <div class="container margin-vert--xl">
@@ -24,10 +24,14 @@ description: a basic login form that will POST the input values on submit
             required
           />
         </div>
+        <div class="inputs" style="display: none;">
+          <input name="honeypotCode" type="text" autocomplete="off" placeholder="Enter code" />
+          <input name="honeypotPassword" type="password" autocomplete="off" placeholder="Enter password" />
+          <input name="honeypotEmail" type="text" autocomplete="off" placeholder="Enter email" />
+        </div>
         <div class="row margin-bottom--md">
           <label for="password" class="margin-right--sm">Password</label>
           <input
-            autocomplete="password"
             type="password"
             id="password"
             name="password"
