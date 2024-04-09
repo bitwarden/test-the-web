@@ -96,6 +96,12 @@ function handleRequest(
 }
 
 app
+  .route(ROUTES.ACCOUNT)
+  .post((request: Request, response: Response) =>
+    handleRequest(request, response, ROUTES.ACCOUNT),
+  );
+
+app
   .route(ROUTES.IDENTITY)
   .post((request: Request, response: Response) =>
     handleRequest(request, response, ROUTES.IDENTITY),
