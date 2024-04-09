@@ -1,0 +1,30 @@
+---
+slug: security-code-multi-input
+title: multi-input security code
+description: A form that requires a security code with each numerical digit as it's own input
+as_seen_on: PayPal login
+---
+
+import { MuiOtpInput } from "mui-one-time-password-input";
+import { OTPMultiInput } from "@site/src/components/multiInputOTP";
+
+<div class="container margin-vert--xl">
+  <div class="row">
+    <div class="card col col--12 padding--md">
+      <form class="card__body" method="POST" action="/login">
+        <div class="row margin-bottom--md">
+          <OTPMultiInput />
+        </div>
+        <div class="row">
+          <button
+            type="submit"
+            class="col col--4 col--offset-4 button button--primary"
+          >
+            Continue
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />
