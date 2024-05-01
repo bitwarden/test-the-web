@@ -17,26 +17,24 @@ export const OTPMultiInput = () => {
   const [otp, setOtp] = useState("");
 
   return (
-    <>
-      <MuiOtpInputStyled
-        value={otp}
-        length={6}
-        onChange={(newValue) => {
-          setOtp(newValue);
-        }}
-        TextFieldsProps={(index: number) => ({
-          name: `otp-code-${index}`,
-          type: "number",
-          placeholder: " ",
-          autoComplete: "one-time-code",
-          inputProps: {
-            // workaround for `validateChar` prop not working properly on Firefox/Safari
-            onInput: handleInputEvent,
-            required: true,
-          },
-        })}
-      />
-    </>
+    <MuiOtpInputStyled
+      value={otp}
+      length={6}
+      onChange={(newValue) => {
+        setOtp(newValue);
+      }}
+      TextFieldsProps={(index: number) => ({
+        name: `otp-code-${index}`,
+        type: "number",
+        placeholder: " ",
+        autoComplete: "one-time-code",
+        inputProps: {
+          // workaround for `validateChar` prop not working properly on Firefox/Safari
+          onInput: handleInputEvent,
+          required: true,
+        },
+      })}
+    />
   );
 };
 
