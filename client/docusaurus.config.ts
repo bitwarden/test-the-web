@@ -30,7 +30,10 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  clientModules: ["./src/modules/customDataAttributes.js"],
+  clientModules: [
+    "./src/modules/customDataAttributes.js",
+    "./src/modules/reloadPageScripts.js",
+  ],
   staticDirectories: ["static"],
 
   // Even if you don't use internalization, you can use this field to set useful
