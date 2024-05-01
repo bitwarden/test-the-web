@@ -120,10 +120,6 @@ const config: Config = {
           },
         ],
       },
-      footer: {
-        style: "dark",
-        copyright: `© ${new Date().getFullYear()} Bitwarden, Inc.`,
-      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
