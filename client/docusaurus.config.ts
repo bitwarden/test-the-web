@@ -14,7 +14,7 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://localhost",
+  url: process.env.TEST_WEB_HOST || "https://localhost",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -119,10 +119,6 @@ const config: Config = {
             position: "right",
           },
         ],
-      },
-      footer: {
-        style: "dark",
-        copyright: `© ${new Date().getFullYear()} Bitwarden, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
