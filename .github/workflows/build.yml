@@ -42,5 +42,8 @@ jobs:
         with:
           name: build-files
           path: |
-            ./api/build
-            ./client/build
+            package.json
+            client/package.json
+            api/build
+            api/package.json
+            client/build
