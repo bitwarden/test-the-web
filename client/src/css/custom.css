@@ -59,23 +59,16 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.theme-doc-markdown > header:first-of-type details > summary {
-  list-style: none;
-}
-.theme-doc-markdown > header:first-of-type details > summary::after {
-  font-size: 24px;
-  content: " ▸";
-}
-.theme-doc-markdown > header:first-of-type details[open] > summary::after {
-  font-size: 24px;
-  content: " ▾";
-}
-
 .theme-doc-markdown > header:first-of-type h1:first-of-type {
   display: inline-block;
   cursor: pointer;
   font-size: 24px;
   margin-bottom: 5px;
+}
+
+main [class^="docItemCol_"],
+main [class*=" docItemCol_"] {
+  margin: auto;
 }
 
 select,

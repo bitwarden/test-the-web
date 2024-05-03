@@ -1,5 +1,6 @@
 ---
 title: Intro
+displayed_sidebar: formsSidebar
 ---
 
 # Let's test the web!
