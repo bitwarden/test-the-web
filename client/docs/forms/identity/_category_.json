@@ -1,8 +1,9 @@
 {
+  "collapsed": true,
   "label": "Identity",
   "link": {
     "type": "generated-index",
     "description": "Common patterns for identity forms"
   },
-  "collapsed": false
+  "position": 2
 }

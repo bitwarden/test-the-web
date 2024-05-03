@@ -51,6 +51,10 @@ const config: Config = {
       {
         docs: {
           breadcrumbs: false,
+          // @TODO there is a known issue where docs `routeBasePath` set to "/" breaks 404 pages
+          // https://github.com/facebook/docusaurus/issues/9665
+          // https://github.com/facebook/docusaurus/issues/9688
+
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
         },
