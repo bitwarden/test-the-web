@@ -5,8 +5,8 @@
   "main": "app.ts",
   "scripts": {
     "build": "rimraf build && tsc",
-    "start:watch": "nodemon -x 'npm run start'",
-    "start": "npm run build && node build/app.js",
+    "start:watch": "nodemon -x 'npm run build && npm run start'",
+    "start": "node build/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck": "tsc"
   },

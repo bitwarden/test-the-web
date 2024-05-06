@@ -42,5 +42,11 @@ jobs:
         with:
           name: build-files
           path: |
-            ./api/build
-            ./client/build
+            api/build
+            api/package-lock.json
+            api/package.json
+            client/build
+            client/package-lock.json
+            client/package.json
+            package-lock.json
+            package.json
