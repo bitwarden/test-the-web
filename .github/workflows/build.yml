@@ -34,6 +34,7 @@ jobs:
       - name: Clean install dependencies and build
         run: |
           npm ci
+          export TEST_WEB_HOST="${{ secrets.TEST_WEB_HOST || 'https://localhost' }}"
           npm run build
 
       - name: Upload build as artifact
