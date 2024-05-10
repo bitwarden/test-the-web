@@ -1,8 +1,9 @@
 {
+  "collapsed": true,
   "label": "Update",
   "link": {
     "type": "generated-index",
     "description": "Common patterns for authentication update forms"
   },
-  "collapsed": false
+  "position": 6
 }

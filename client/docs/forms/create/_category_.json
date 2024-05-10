@@ -1,8 +1,9 @@
 {
+  "collapsed": true,
   "label": "Create",
   "link": {
     "type": "generated-index",
     "description": "Common patterns for account creation forms"
   },
-  "collapsed": false
+  "position": 5
 }

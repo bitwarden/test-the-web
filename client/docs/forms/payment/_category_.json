@@ -1,8 +1,9 @@
 {
+  "collapsed": true,
   "label": "Payment",
   "link": {
     "type": "generated-index",
     "description": "Common patterns for payment forms"
   },
-  "collapsed": false
+  "position": 3
 }
