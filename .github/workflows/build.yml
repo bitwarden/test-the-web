@@ -32,6 +32,8 @@ jobs:
           node-version: "20"
 
       - name: Clean install dependencies and build
+        env:
+          TEST_WEB_HOST: "${{ secrets.TEST_WEB_HOST || 'https://localhost' }}"
         run: |
           npm ci
           npm run build
