@@ -34,7 +34,7 @@
     "@emotion/babel-plugin": "11.11.0",
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.5",
-    "@types/react": "18.3.2",
+    "@types/react": "18.3.3",
     "mui-one-time-password-input": "2.0.2"
   },
   "browserslist": {
