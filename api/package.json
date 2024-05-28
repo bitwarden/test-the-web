@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/express": "4.17.21",
-    "@types/node": "20.12.8"
+    "@types/node": "20.12.12"
   },
   "nodemonConfig": {
     "ignore": [
