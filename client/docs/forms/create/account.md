@@ -2,6 +2,7 @@
 slug: create-account
 title: account creation form
 sidebar_label: account
+sidebar_position: 1
 description: a sign up form requiring an email and password - it will POST the input values on submit
 ---
 
