@@ -2,6 +2,7 @@
 slug: card-payment
 title: card payment form
 sidebar_label: card
+sidebar_position: 1
 description: a card payment form that will POST the input values on submit
 ---
 
