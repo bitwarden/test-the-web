@@ -1,4 +1,4 @@
-import { useMemo, useState, SetStateAction } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   EmailInput,
   PasswordInput,
@@ -14,26 +14,26 @@ const FormSteps = {
 
 type FormSteps = (typeof FormSteps)[keyof typeof FormSteps];
 
-type FormValues = {
+type LoginValues = {
   username?: string;
   email?: string;
   password?: string;
 };
 
-export function LoginForm({
+export function LoginFormless({
   action,
-  isMultiStep = false,
   stepButtonLabel = "Next",
   submitButtonLabel = "Submit",
 }: {
   action: string;
-  isMultiStep?: boolean;
   stepButtonLabel?: string;
   submitButtonLabel?: string;
 }): JSX.Element {
-  const [formValues, setFormValues] = useState<SetStateAction<FormValues>>({});
-  const [currentFormStep, setCurrentFormStep] =
-    useState<SetStateAction<FormSteps | undefined>>();
+  const [loginValues, setLoginValues] = useState<LoginValues>({});
+  const currentInputRef = useRef<HTMLInputElement>(null);
+  const [currentFormStep, setCurrentFormStep] = useState<
+    FormSteps | undefined
+  >();
 
   useMemo(() => {
     switch (currentFormStep) {
@@ -44,54 +44,50 @@ export function LoginForm({
         setCurrentFormStep(FormSteps.Password);
         break;
       case FormSteps.Password:
-        submitFormData(action, formValues);
+        submitFormData(action, loginValues);
         break;
       default:
         setCurrentFormStep(FormSteps.Username);
         break;
     }
-  }, [formValues]);
+  }, [loginValues]);
 
-  function handleFormStep(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function handleStep() {
+    const stepInputValue = currentInputRef.current?.value;
 
-    const formData = new FormData(event.currentTarget);
-    setFormValues({ ...formValues, ...Object.fromEntries(formData as any) });
+    if (currentFormStep && stepInputValue) {
+      setLoginValues({
+        ...loginValues,
+        ...{ [currentFormStep]: stepInputValue },
+      });
+    }
   }
 
-  return isMultiStep ? (
-    <form className="card__body" onSubmit={handleFormStep}>
+  return (
+    <div className="card__body">
       {currentFormStep === FormSteps.Username ? (
-        <UsernameInput />
+        <UsernameInput inputRef={currentInputRef} />
       ) : currentFormStep === FormSteps.Email ? (
-        <EmailInput />
+        <EmailInput inputRef={currentInputRef} />
       ) : currentFormStep === FormSteps.Password ? (
-        <PasswordInput />
+        <PasswordInput inputRef={currentInputRef} />
       ) : (
         <p>Welcome! Please click the "next" button to proceed.</p>
       )}
 
       <SubmitButton
+        handleSelect={handleStep}
         label={
           currentFormStep === FormSteps.Password
             ? submitButtonLabel
             : stepButtonLabel
         }
       />
-    </form>
-  ) : (
-    <form className="card__body" method="POST" action="/login">
-      <UsernameInput />
-      <EmailInput />
-      <PasswordInput />
-      <div className="row">
-        <SubmitButton label={submitButtonLabel} />
-      </div>
-    </form>
+    </div>
   );
 }
 
-function submitFormData(action: string, data: FormValues | object) {
+function submitFormData(action: string, data: LoginValues | object) {
   fetch(action, {
     method: "POST",
     headers: {

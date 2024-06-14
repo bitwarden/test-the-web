@@ -2,6 +2,7 @@
 slug: bare-inputs-login
 title: login inputs without an enclosing form
 sidebar_label: bare inputs
+sidebar_position: 4
 description: bare inputs without an enclosing `<form>` tag that will POST the input values on submit (via `fetch`)
 ---
 
