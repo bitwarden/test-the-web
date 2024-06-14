@@ -2,6 +2,7 @@
 slug: login-honeypot
 title: login form with honeypots
 sidebar_label: honeypot login
+sidebar_position: 7
 description: a login form with hidden "honeypot" inputs (for bot detection) that should remain empty - it will POST the input values on submit
 as_seen_on: paypal.com
 ---

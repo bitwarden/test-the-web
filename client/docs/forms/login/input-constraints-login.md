@@ -2,6 +2,7 @@
 slug: input-constraints-login
 title: login form with input constraints
 sidebar_label: input constraints
+sidebar_position: 6
 description: a login form with input constraints that will disallow automated or manual entry of non-matching value patterns - it will POST the input values on submit
 ---
 
