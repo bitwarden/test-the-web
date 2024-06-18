@@ -7,7 +7,17 @@ description: two sibling iframed login forms nested within a series of inline fr
 unlisted: true
 ---
 
+import { NestedIframeControl } from "@site/src/components/NestedIframeControl";
 import { NestedIframeLogin } from "@site/src/components/NestedIframeLogin";
+
+<div className="col col--12 margin-vert--lg hide-on-bare-page">
+  <div className="row">
+    <label htmlFor="nested-iframe-control" className="margin-right--sm">
+      <span>Select nested iframe depth:</span>
+    </label>
+    <NestedIframeControl />
+  </div>
+</div>
 
 <NestedIframeLogin slug="nested-iframe-login" />
 

@@ -1,4 +1,5 @@
 import { useLocation } from "@docusaurus/router";
+import Admonition from "@theme/Admonition";
 import styled from "@emotion/styled";
 import {
   EmailInput,
@@ -24,6 +25,14 @@ export function NestedIframeLogin({
     width: "100%",
     minHeight: `calc(370px + ${depth}rem)`,
   };
+
+  if (depth > 100) {
+    return (
+      <Admonition type="warning">
+        Depth value is too high; try a lower value.
+      </Admonition>
+    );
+  }
 
   if (depth > 0) {
     const src = `/forms/login/${slug}?depth=${newDepth}&docusaurus-data-bare-page=true`;
