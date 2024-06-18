@@ -34,6 +34,14 @@ export function NestedIframeLogin({
     );
   }
 
+  if (depth < 0) {
+    return (
+      <Admonition type="warning">
+        Depth value is too low; try a higher value.
+      </Admonition>
+    );
+  }
+
   if (depth > 0) {
     const src = `/forms/login/${slug}?depth=${newDepth}&docusaurus-data-bare-page=true`;
 
