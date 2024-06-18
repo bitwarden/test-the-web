@@ -132,6 +132,18 @@ html[data-hide-sidebar="true"] .theme-doc-sidebar-container {
   display: none;
 }
 
+html[data-bare-page="true"] .container,
+html[data-bare-page="true"] .col,
+html[data-bare-page="true"] .row {
+  margin: 0;
+  padding: 0;
+}
+
+html[data-bare-page="true"] article hr,
+html[data-bare-page="true"] main .theme-unlisted-banner {
+  display: none;
+}
+
 .navbar__brand {
   margin-right: 5px;
 }

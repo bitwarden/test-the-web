@@ -1,7 +1,7 @@
 ---
 slug: iframe-multi-step-formless-login
 title: iframe-multi-step formless login
-sidebar_label: iframe, multi-step (formless)
+sidebar_label: multi-step (iframe, formless)
 sidebar_position: 10
 description: iframed multi-step login inputs without an enclosing form which will store user inputs of each step and will POST on final submit
 as_seen_on: icloud.com
