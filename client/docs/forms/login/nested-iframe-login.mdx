@@ -1,0 +1,24 @@
+---
+slug: nested-iframe-login
+title: nested iframe login form
+sidebar_label: iframe (nested)
+sidebar_position: 3
+description: two sibling iframed login forms nested within a series of inline frames (iframe) that will POST on submit. Intermediate depth can be specified with a query string param of `depth` and integer value (e.g. `depth=6`). Intermediate depth defaults to a value of "3".
+unlisted: true
+---
+
+import { NestedIframeControl } from "@site/src/components/NestedIframeControl";
+import { NestedIframeLogin } from "@site/src/components/NestedIframeLogin";
+
+<div className="col col--12 margin-vert--lg hide-on-bare-page">
+  <div className="row">
+    <label htmlFor="nested-iframe-control" className="margin-right--sm">
+      <span>Select nested iframe depth:</span>
+    </label>
+    <NestedIframeControl />
+  </div>
+</div>
+
+<NestedIframeLogin slug="nested-iframe-login" />
+
+<hr />

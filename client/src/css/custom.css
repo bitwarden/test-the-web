@@ -78,6 +78,7 @@ input[type="email"],
 input[type="tel"],
 input[type="search"],
 input[type="password"],
+input[type="number"],
 input[type="text"] {
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-pagination-nav-border-radius);
@@ -95,6 +96,7 @@ input[type="email"]:hover,
 input[type="tel"]:hover,
 input[type="search"]:hover,
 input[type="password"]:hover,
+input[type="number"]:hover,
 input[type="text"]:hover {
   border-color: var(--ifm-pagination-nav-color-hover);
 }
@@ -106,6 +108,7 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="search"]:focus,
 input[type="password"]:focus,
+input[type="number"]:focus,
 input[type="text"]:focus,
 select:active,
 input:not([type]):active, /* text type is stripped from built html */
@@ -114,6 +117,7 @@ input[type="email"]:active,
 input[type="tel"]:active,
 input[type="search"]:active,
 input[type="password"]:active,
+input[type="number"]:active,
 input[type="text"]:active {
   outline: var(--ifm-pagination-nav-color-hover) 2px solid;
   background: var(--docsearch-searchbox-focus-background);
@@ -129,6 +133,19 @@ html[data-bare-page="true"] .theme-doc-sidebar-container,
 html[data-hide-header="true"] .theme-doc-markdown > header,
 html[data-hide-pagination="true"] .pagination-nav,
 html[data-hide-sidebar="true"] .theme-doc-sidebar-container {
+  display: none;
+}
+
+html[data-bare-page="true"] .container,
+html[data-bare-page="true"] .col,
+html[data-bare-page="true"] .row {
+  margin: 0;
+  padding: 0;
+}
+
+html[data-bare-page="true"] article hr,
+html[data-bare-page="true"] main .theme-unlisted-banner,
+html[data-bare-page="true"] .hide-on-bare-page {
   display: none;
 }
 
