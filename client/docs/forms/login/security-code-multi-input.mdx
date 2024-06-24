@@ -8,17 +8,17 @@ as_seen_on: PayPal login
 import { MuiOtpInput } from "mui-one-time-password-input";
 import { OTPMultiInput } from "@site/src/components/multiInputOTP";
 
-<div class="container margin-vert--xl">
-  <div class="row">
-    <div class="card col col--12 padding--md">
-      <form class="card__body" method="POST" action="/login">
-        <div class="row margin-bottom--md">
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/login">
+        <div className="row margin-bottom--md">
           <OTPMultiInput />
         </div>
-        <div class="row">
+        <div className="row">
           <button
             type="submit"
-            class="col col--4 col--offset-4 button button--primary"
+            className="col col--4 col--offset-4 button button--primary"
           >
             <span>Continue</span>
           </button>
