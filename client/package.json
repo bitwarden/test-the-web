@@ -32,9 +32,9 @@
     "@docusaurus/module-type-aliases": "3.4.0",
     "@docusaurus/tsconfig": "3.4.0",
     "@docusaurus/types": "3.4.0",
-    "@emotion/babel-plugin": "11.11.0",
-    "@emotion/react": "11.11.4",
-    "@emotion/styled": "11.11.5",
+    "@emotion/babel-plugin": "11.12.0",
+    "@emotion/react": "11.13.0",
+    "@emotion/styled": "11.13.0",
     "@types/react": "18.3.3",
     "mui-one-time-password-input": "2.0.3"
   },
