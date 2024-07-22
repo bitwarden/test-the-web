@@ -31,7 +31,7 @@
     "@axe-core/cli": "4.9.1",
     "@material/web": "1.5.1",
     "cspell": "8.10.4",
-    "husky": "9.0.11",
+    "husky": "9.1.1",
     "lint-staged": "15.2.7",
     "nodemon": "3.1.4",
     "prettier": "3.3.3",
