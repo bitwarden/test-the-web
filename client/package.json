@@ -28,7 +28,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@axe-core/cli": "4.9.1",
+    "@axe-core/cli": "4.10.0",
     "@docusaurus/module-type-aliases": "3.5.2",
     "@docusaurus/tsconfig": "3.5.2",
     "@docusaurus/types": "3.5.2",
