@@ -28,7 +28,7 @@
     "typecheck": "(npm run typecheck:api) && (npm run typecheck:client)"
   },
   "devDependencies": {
-    "@axe-core/cli": "4.9.1",
+    "@axe-core/cli": "4.10.0",
     "@material/web": "2.0.0",
     "cspell": "8.14.2",
     "husky": "9.1.5",
