@@ -2,6 +2,7 @@
 slug: address-na
 title: address form (North America)
 sidebar_label: address (NA)
+sidebar_position: 1
 description: an address form without validation for North America that will POST on submit
 ---
 

@@ -1,7 +1,7 @@
 ---
 slug: address-spec-simple
-title: spec simple address form
-sidebar_label: address (spec-simple)
+title: spec-compliant address form (North America)
+sidebar_label: address (NA, spec)
 description: An address form that is structured to conform with the standard autocomplete spec, and contains valid autocomplete attributes on all fields.
 ---
 
