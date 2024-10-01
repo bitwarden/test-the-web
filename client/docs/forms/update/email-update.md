@@ -30,7 +30,7 @@ description: a form allowing a user to update their email, requiring a password 
           <div class="col col--12 margin-bottom--md">
             <label for="password" class="margin-right--sm">Enter your password to confirm</label>
             <input
-              autocomplete="password"
+              autocomplete="current-password"
               id="password"
               name="password"
               required

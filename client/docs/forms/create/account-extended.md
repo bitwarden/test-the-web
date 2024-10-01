@@ -52,6 +52,7 @@ description: a sign up form requiring an email and password along with some iden
               id="full-name"
               name="full-name"
               placeholder="Evelyn Q. Wang"
+              autocomplete="name"
               required
             />
           </div>
@@ -66,6 +67,7 @@ description: a sign up form requiring an email and password along with some iden
               id="company-name"
               name="company-name"
               placeholder="Generic, Inc."
+              autocomplete="organization"
               required
             />
           </div>
@@ -80,6 +82,7 @@ description: a sign up form requiring an email and password along with some iden
               id="phone-number"
               name="phone-number"
               placeholder="(555) 555-5555"
+              autocomplete="tel"
             />
           </div>
         </div>
@@ -93,6 +96,7 @@ description: a sign up form requiring an email and password along with some iden
               id="address"
               name="address"
               placeholder="1234 Main St"
+              autocomplete="address-line1"
               required
             />
             <input
@@ -101,6 +105,7 @@ description: a sign up form requiring an email and password along with some iden
               id="address-ext"
               name="address-ext"
               placeholder="Apt. #42"
+              autocomplete="address-line2"
             />
           </div>
         </div>
@@ -114,6 +119,7 @@ description: a sign up form requiring an email and password along with some iden
               id="city"
               name="city"
               placeholder="Beverly Hills"
+              autocomplete="address-level2"
               required
             />
           </div>
@@ -126,6 +132,7 @@ description: a sign up form requiring an email and password along with some iden
               id="state"
               name="state"
               placeholder="California"
+              autocomplete="address-level1"
               required
             />
           </div>
@@ -140,6 +147,7 @@ description: a sign up form requiring an email and password along with some iden
               id="country"
               name="country"
               placeholder="United States"
+              autocomplete="country"
               required
             />
           </div>
@@ -152,6 +160,7 @@ description: a sign up form requiring an email and password along with some iden
               id="postcode"
               name="postcode"
               placeholder="90210"
+              autocomplete="postal-code"
               required
             />
           </div>
