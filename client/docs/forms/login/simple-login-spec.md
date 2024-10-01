@@ -1,9 +1,9 @@
 ---
-slug: simple
-title: simple login form
-sidebar_label: simple
-sidebar_position: 1
-description: a basic login form that will POST the input values on submit
+slug: simple-spec
+title: spec-compliant login form
+sidebar_label: simple (spec)
+sidebar_position: 2
+description: a basic login form that is structured to conform with the standard autocomplete spec, and contains valid autocomplete attributes on all fields and will POST the input values on submit
 ---
 
 <div class="container margin-vert--xl">
@@ -17,20 +17,21 @@ description: a basic login form that will POST the input values on submit
         <div class="row margin-bottom--md">
           <label for="username" class="margin-right--sm">Username</label>
           <input
-            type="text"
+            autocomplete="username"
             id="username"
             name="username"
             placeholder="e.g. jsmith, jsmith@example.com"
+            type="text"
             required
           />
         </div>
         <div class="row margin-bottom--md">
           <label for="password" class="margin-right--sm">Password</label>
           <input
-            autocomplete="password"
-            type="password"
+            autocomplete="current-password"
             id="password"
             name="password"
+            type="password"
             required
           />
         </div>
