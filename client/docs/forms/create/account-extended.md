@@ -2,6 +2,7 @@
 slug: create-account-extended
 title: account creation form with identity information
 sidebar_label: account (extended info)
+sidebar_position: 2
 description: a sign up form requiring an email and password along with some identity information - it will POST the input values on submit
 ---
 
