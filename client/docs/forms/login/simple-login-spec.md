@@ -1,40 +1,44 @@
 ---
-slug: bare-inputs-login
-title: login inputs without an enclosing form
-sidebar_label: bare inputs
-sidebar_position: 5
-description: bare inputs without an enclosing `<form>` tag that will POST the input values on submit (via `fetch`)
+slug: simple-spec
+title: spec-compliant login form
+sidebar_label: simple (spec)
+sidebar_position: 2
+description: a basic login form that is structured to conform with the standard autocomplete spec, and contains valid autocomplete attributes on all fields and will POST the input values on submit
 ---
-
-<script src="/js/bare-inputs-login.js" defer="defer"></script>
 
 <div class="container margin-vert--xl">
   <div class="row">
     <div class="card col col--12 padding--md">
-      <div class="card__body bare-inputs-container">
+      <form
+        class="card__body"
+        method="POST"
+        action="/login"
+      >
         <div class="row margin-bottom--md">
           <label for="username" class="margin-right--sm">Username</label>
           <input
-            type="text"
+            autocomplete="username"
             id="username"
             name="username"
             placeholder="e.g. jsmith, jsmith@example.com"
+            type="text"
             required
           />
         </div>
         <div class="row margin-bottom--md">
           <label for="password" class="margin-right--sm">Password</label>
           <input
-            type="password"
+            autocomplete="current-password"
             id="password"
             name="password"
+            type="password"
             required
           />
         </div>
         <div class="row">
-          <button type="submit" id="bare-inputs-submit" class="button button--primary">Login</button>
+          <button type="submit" class="button button--primary">Login</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

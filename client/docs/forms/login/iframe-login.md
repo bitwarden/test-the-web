@@ -2,7 +2,7 @@
 slug: iframe-login
 title: iframe login form
 sidebar_label: iframe
-sidebar_position: 2
+sidebar_position: 3
 description: a login form nested within an inline frame (iframe) that will POST on submit
 ---
 

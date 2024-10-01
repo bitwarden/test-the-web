@@ -1,9 +1,8 @@
 ---
-slug: address-na
-title: address form (North America)
-sidebar_label: address (NA)
-sidebar_position: 1
-description: an address form without validation for North America that will POST on submit
+slug: address-spec-simple
+title: spec-compliant address form (North America)
+sidebar_label: address (NA, spec)
+description: an address form that is structured to conform with the standard autocomplete spec, and contains valid autocomplete attributes on all fields
 ---
 
 <div class="container margin-vert--xl">
@@ -23,6 +22,7 @@ description: an address form without validation for North America that will POST
               id="full-name"
               name="full-name"
               placeholder="Evelyn Q. Wang"
+              autocomplete="name"
               required
             />
           </div>
@@ -34,6 +34,7 @@ description: an address form without validation for North America that will POST
               id="company-name"
               name="company-name"
               placeholder="Generic, Inc."
+              autocomplete="organization"
               required
             />
           </div>
@@ -44,6 +45,7 @@ description: an address form without validation for North America that will POST
               type="email"
               id="email"
               name="email"
+              autocomplete="email"
               placeholder="you@example.com"
             />
           </div>
@@ -54,6 +56,7 @@ description: an address form without validation for North America that will POST
               type="tel"
               id="phone-number"
               name="phone-number"
+              autocomplete="tel"
               placeholder="(555) 555-5555"
             />
           </div>
@@ -65,6 +68,7 @@ description: an address form without validation for North America that will POST
               id="address"
               name="address"
               placeholder="1234 Main St"
+              autocomplete="address-line1"
               required
             />
           </div>
@@ -74,6 +78,7 @@ description: an address form without validation for North America that will POST
               id="address-ext"
               name="address-ext"
               placeholder="Apt. #42"
+              autocomplete="address-line2"
             />
           </div>
           <div class="col col--12 margin-bottom--md">
@@ -84,6 +89,7 @@ description: an address form without validation for North America that will POST
               id="city"
               name="city"
               placeholder="Beverly Hills"
+              autocomplete="address-level2"
               required
             />
           </div>
@@ -92,6 +98,7 @@ description: an address form without validation for North America that will POST
               <select
                 id="state"
                 name="state"
+                autocomplete="address-level1"
               >
                 <option value="" selected>Select a state/territory</option>
                 <optgroup label="Canada">
@@ -177,6 +184,7 @@ description: an address form without validation for North America that will POST
               <select
                 id="country"
                 name="country"
+                autocomplete="country"
                 required
               >
                 <option value="" selected>Select a country</option>
@@ -194,6 +202,7 @@ description: an address form without validation for North America that will POST
               id="postcode"
               name="postcode"
               placeholder="90210"
+              autocomplete="postal-code"
               required
             />
           </div>
