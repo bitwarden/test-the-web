@@ -1,8 +1,8 @@
 ---
-slug: security-code
-title: security code
-sidebar_position: 20
-description: A form that expects an authenticator security code
+slug: security-code-device
+title: security code (device)
+sidebar_position: 21
+description: A form that expects a code filled by a security HID
 as_seen_on: Bitwarden login
 ---
 
@@ -16,7 +16,7 @@ as_seen_on: Bitwarden login
       >
         <div class="row">
           <div class="col col--12 margin-bottom--md">
-            <label class="tw-mb-1 tw-block tw-font-semibold tw-text-main" for="input-3">
+            <label class="tw-mb-1 tw-block tw-font-semibold tw-text-main" for="input-4">
               <span>Verification code</span>
               <small> (required)</small>
             </label>
@@ -25,10 +25,10 @@ as_seen_on: Bitwarden login
               autocapitalize="none"
               autocomplete="off"
               autocorrect="none"
-              id="input-3"
+              id="input-4"
               inputmode="verbatim"
-              name="input-3"
-              type="text"
+              name="input-4"
+              type="password"
               required
             />
           </div>
