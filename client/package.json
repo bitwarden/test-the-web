@@ -36,7 +36,7 @@
     "@emotion/react": "11.13.3",
     "@emotion/styled": "11.13.0",
     "@types/react": "18.3.12",
-    "mui-one-time-password-input": "2.0.3"
+    "mui-one-time-password-input": "3.0.1"
   },
   "browserslist": {
     "production": [
