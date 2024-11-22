@@ -2,10 +2,23 @@
   const submitButton = document.querySelector(
     'button[type="submit"]#search-submit',
   );
-  const input = document.querySelector("input.typeless-search-input");
+
+  function sanitizeStringInput(inputValue) {
+    if (typeof inputValue !== "string") {
+      return "";
+    }
+
+    return inputValue.trim();
+  }
 
   submitButton.addEventListener("click", async () => {
-    if (!input) {
+    const inputValue = document.querySelector(
+      "input.typeless-search-input",
+    )?.value;
+
+    const q = sanitizeStringInput(inputValue);
+
+    if (!q) {
       return;
     }
 
@@ -17,7 +30,7 @@
         "Content-Type": "application/json",
       },
       redirect: "follow",
-      body: JSON.stringify({ q: input.value }),
+      body: JSON.stringify({ q }),
     });
 
     if (response.redirected) {
