@@ -28,7 +28,7 @@ jobs:
         with:
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
-          node-version: "22"
+          node-version: "22.14.0"
 
       - name: Clean install dependencies and build
         env:
