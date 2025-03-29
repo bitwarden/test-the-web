@@ -6,12 +6,15 @@ sidebar_position: 8
 description: a multi-step form will store user inputs of each step and will POST on final submit
 ---
 
-import { LoginForm } from "@site/src/components/LoginForm";
+import { LoginForm, FormSteps } from "@site/src/components/LoginForm";
 
 <div className="container margin-vert--xl">
   <div className="row">
     <div className="card col col--12 padding--md">
-      <LoginForm action="/login" isMultiStep={true} />
+      <LoginForm
+        action="/login"
+        formSteps={[FormSteps.Username, FormSteps.Email, FormSteps.Password]}
+      />
     </div>
   </div>
 </div>
