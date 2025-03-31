@@ -16,7 +16,7 @@
     "helmet": "8.0.0"
   },
   "devDependencies": {
-    "@types/express": "5.0.0",
+    "@types/express": "5.0.1",
     "@types/node": "22.13.11"
   },
   "nodemonConfig": {
