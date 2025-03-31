@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
-import { LoginForm } from "@site/src/components/LoginForm";
+import { FormSteps, LoginForm } from "@site/src/components/LoginForm";
 
 export function HiddenLogin() {
   const [showLogin, setShowLogin] = useState(false);
@@ -22,7 +22,14 @@ export function HiddenLogin() {
       </div>
       {showLogin && (
         <ZoomAndFadeInLoginFormContainer>
-          <LoginForm action="/login" isMultiStep={true} />
+          <LoginForm
+            action="/login"
+            formSteps={[
+              FormSteps.Username,
+              FormSteps.Email,
+              FormSteps.Password,
+            ]}
+          />
         </ZoomAndFadeInLoginFormContainer>
       )}
     </div>

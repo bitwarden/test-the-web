@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import { FormEvent, ReactEventHandler, RefObject } from "react";
 
 export function UsernameInput({
   inputRef,
@@ -69,7 +69,7 @@ export function SubmitButton({
   handleSelect,
   label,
 }: {
-  handleSelect?: () => void;
+  handleSelect?: ReactEventHandler;
   label: string;
 }) {
   return (
