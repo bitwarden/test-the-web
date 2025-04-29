@@ -11,7 +11,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "dotenv": "16.4.7",
+    "dotenv": "16.5.0",
     "express": "4.21.2",
     "helmet": "8.0.0"
   },
