@@ -6,6 +6,8 @@ export const ROUTES = {
   LOGIN: "/login",
   PAYMENT: "/payment",
   SEARCH: "/search",
+  WELL_KNOWN_CHANGE_PASSWORD: "/.well-known/change-password",
+  UPDATE_PASSWORD_FORM: "/forms/update/update-password",
 };
 
 export const QUERY_PARAMS = {
