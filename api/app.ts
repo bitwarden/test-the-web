@@ -119,6 +119,12 @@ app
     handleRequest(request, response, ROUTES.PAYMENT),
   );
 
+app
+  .route(ROUTES.WELL_KNOWN_CHANGE_PASSWORD)
+  .get((request: Request, response: Response) =>
+    response.redirect(ROUTES.UPDATE_PASSWORD_FORM),
+  );
+
 app.route(ROUTES.SEARCH).post((request: Request, response: Response) => {
   const returnDataStart = ~~(Math.random() * mockSearchData.length);
   const returnDataLength = ~~(
