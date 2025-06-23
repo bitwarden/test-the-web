@@ -2,18 +2,18 @@
 slug: multi-step-login
 title: multi-step login form
 sidebar_label: multi-step
-sidebar_position: 8
+sidebar_position: 2
 description: a multi-step form will store user inputs of each step and will POST on final submit
 ---
 
-import { LoginForm, FormSteps } from "@site/src/components/LoginForm";
+import { LoginForm, FormStep } from "@site/src/components/LoginForm";
 
 <div className="container margin-vert--xl">
   <div className="row">
     <div className="card col col--12 padding--md">
       <LoginForm
         action="/login"
-        formSteps={[FormSteps.Username, FormSteps.Email, FormSteps.Password]}
+        formSteps={[FormStep.Username, FormStep.Email, FormStep.Password]}
       />
     </div>
   </div>

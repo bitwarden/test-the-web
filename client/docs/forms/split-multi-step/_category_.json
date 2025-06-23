@@ -1,0 +1,10 @@
+{
+  "collapsed": true,
+  "label": "Split & Multi-Step",
+  "link": {
+    "type": "generated-index",
+    "slug": "split-multi-step",
+    "description": "Patterns for multi-step forms (fields on different steps) or split forms (password only)"
+  },
+  "position": 1
+}

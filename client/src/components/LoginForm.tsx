@@ -5,21 +5,29 @@ import {
   ReactElement,
   FormEvent,
   useEffect,
+  JSX,
 } from "react";
+
 import {
+  ConfirmPasswordInput,
+  CurrentPasswordInput,
   EmailInput,
+  NewPasswordInput,
   PasswordInput,
   SubmitButton,
   UsernameInput,
 } from "./Inputs";
 
-export const FormSteps = {
+export const FormStep = {
   Username: "username",
   Email: "email",
   Password: "password",
+  NewPassword: "new-password",
+  CurrentPassword: "current-password",
+  ConfirmPassword: "confirm-password",
 } as const;
 
-type FormSteps = (typeof FormSteps)[keyof typeof FormSteps];
+type FormStep = (typeof FormStep)[keyof typeof FormStep];
 
 type FormValues = {
   username?: string;
@@ -33,19 +41,22 @@ export function LoginForm({
   stepButtonLabel = "Next",
   submitButtonLabel = "Submit",
 }: {
-  formSteps: FormSteps[];
+  formSteps: Array<FormStep | FormStep[]>;
   action: string;
   stepButtonLabel?: string;
   submitButtonLabel?: string;
 }): JSX.Element {
-  const FormStepMap: { [key in FormSteps]: ReactElement } = {
-    [FormSteps.Username]: <UsernameInput />,
-    [FormSteps.Email]: <EmailInput />,
-    [FormSteps.Password]: <PasswordInput />,
+  const FormStepMap: { [key in FormStep]: ReactElement } = {
+    [FormStep.Username]: <UsernameInput />,
+    [FormStep.Email]: <EmailInput />,
+    [FormStep.Password]: <PasswordInput />,
+    [FormStep.CurrentPassword]: <CurrentPasswordInput />,
+    [FormStep.NewPassword]: <NewPasswordInput />,
+    [FormStep.ConfirmPassword]: <ConfirmPasswordInput />,
   };
 
   const [formValues, setFormValues] = useState<FormValues>({});
-  const [formStepIndex, setformStepIndex] = useState<number>(0);
+  const [formStepIndex, setFormStepIndex] = useState<number>(0);
 
   useEffect(() => {
     if (formStepIndex === formSteps.length) {
@@ -57,7 +68,7 @@ export function LoginForm({
     const formData = new FormData(event.currentTarget);
     setFormValues({ ...formValues, ...Object.fromEntries(formData as any) });
     const nextStep = formStepIndex + 1;
-    setformStepIndex(nextStep);
+    setFormStepIndex(nextStep);
   };
   const isFinalStep = formStepIndex === formSteps.length - 1;
 
@@ -66,11 +77,13 @@ export function LoginForm({
     handleFormStep(event);
   };
 
-  const currentFormStep = formSteps[formStepIndex];
+  const currentFormStep = Array.isArray(formSteps[formStepIndex])
+    ? formSteps[formStepIndex].map((el) => FormStepMap[el])
+    : FormStepMap[formSteps[formStepIndex]];
 
   return formSteps.length > 0 ? (
     <form className="card__body" onSubmit={handleSubmitSelect}>
-      {FormStepMap[currentFormStep]}
+      {currentFormStep}
       <SubmitButton label={isFinalStep ? submitButtonLabel : stepButtonLabel} />
     </form>
   ) : (

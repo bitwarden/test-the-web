@@ -65,6 +65,72 @@ export function PasswordInput({
   );
 }
 
+export function CurrentPasswordInput({
+  inputRef,
+}: {
+  inputRef?: RefObject<HTMLInputElement>;
+}) {
+  return (
+    <div className="row margin-bottom--md">
+      <label htmlFor="password" className="margin-right--sm">
+        Current Password
+      </label>
+      <input
+        ref={inputRef}
+        type="password"
+        name="current-password"
+        autoComplete="current-password"
+        id="password"
+        required
+      />
+    </div>
+  );
+}
+
+export function NewPasswordInput({
+  inputRef,
+}: {
+  inputRef?: RefObject<HTMLInputElement>;
+}) {
+  return (
+    <div className="row margin-bottom--md">
+      <label htmlFor="password" className="margin-right--sm">
+        New Password
+      </label>
+      <input
+        ref={inputRef}
+        type="password"
+        name="update-password"
+        autoComplete="new-password"
+        id="password"
+        required
+      />
+    </div>
+  );
+}
+
+export function ConfirmPasswordInput({
+  inputRef,
+}: {
+  inputRef?: RefObject<HTMLInputElement>;
+}) {
+  return (
+    <div className="row margin-bottom--md">
+      <label htmlFor="newPasswordRetype" className="col col--3">
+        Confirm new password
+      </label>
+      <input
+        autoComplete="new-password"
+        id="newPasswordRetype"
+        name="newPasswordRetype"
+        required
+        spellCheck="false"
+        type="password"
+      />
+    </div>
+  );
+}
+
 export function SubmitButton({
   handleSelect,
   label,
