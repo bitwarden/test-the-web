@@ -102,7 +102,7 @@ export function NewPasswordInput({
         type="password"
         name="update-password"
         autoComplete="new-password"
-        id="password"
+        id="new-password"
         required
       />
     </div>
