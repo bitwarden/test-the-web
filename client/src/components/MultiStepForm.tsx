@@ -1,15 +1,7 @@
-import {
-  useMemo,
-  useState,
-  SetStateAction,
-  ReactElement,
-  FormEvent,
-  useEffect,
-  JSX,
-} from "react";
+import { useState, ReactElement, FormEvent, useEffect, JSX } from "react";
 
 import {
-  ConfirmPasswordInput,
+  ConfirmNewPasswordInput,
   CurrentPasswordInput,
   EmailInput,
   NewPasswordInput,
@@ -35,7 +27,7 @@ type FormValues = {
   password?: string;
 };
 
-export function LoginForm({
+export function MultiStepForm({
   formSteps = [],
   action,
   stepButtonLabel = "Next",
@@ -52,7 +44,7 @@ export function LoginForm({
     [FormStep.Password]: <PasswordInput />,
     [FormStep.CurrentPassword]: <CurrentPasswordInput />,
     [FormStep.NewPassword]: <NewPasswordInput />,
-    [FormStep.ConfirmPassword]: <ConfirmPasswordInput />,
+    [FormStep.ConfirmPassword]: <ConfirmNewPasswordInput />,
   };
 
   const [formValues, setFormValues] = useState<FormValues>({});

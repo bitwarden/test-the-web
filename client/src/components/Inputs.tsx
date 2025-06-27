@@ -80,7 +80,7 @@ export function CurrentPasswordInput({
         type="password"
         name="current-password"
         autoComplete="current-password"
-        id="password"
+        id="current-password"
         required
       />
     </div>
@@ -94,8 +94,8 @@ export function NewPasswordInput({
 }) {
   return (
     <div className="row margin-bottom--md">
-      <label htmlFor="password" className="margin-right--sm">
-        New Password
+      <label htmlFor="new-password" className="col col--3">
+        New password
       </label>
       <input
         ref={inputRef}
@@ -104,25 +104,26 @@ export function NewPasswordInput({
         autoComplete="new-password"
         id="new-password"
         required
+        spellCheck="false"
       />
     </div>
   );
 }
 
-export function ConfirmPasswordInput({
+export function ConfirmNewPasswordInput({
   inputRef,
 }: {
   inputRef?: RefObject<HTMLInputElement>;
 }) {
   return (
     <div className="row margin-bottom--md">
-      <label htmlFor="newPasswordRetype" className="col col--3">
+      <label htmlFor="new-password-retype" className="col col--3">
         Confirm new password
       </label>
       <input
         autoComplete="new-password"
-        id="newPasswordRetype"
-        name="newPasswordRetype"
+        id="new-password-retype"
+        name="new-password-retype"
         required
         spellCheck="false"
         type="password"
