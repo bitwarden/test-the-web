@@ -1,9 +1,9 @@
 {
-  "collapsed": false,
+  "collapsed": true,
   "label": "Login",
   "link": {
     "type": "generated-index",
     "description": "Common patterns for login forms"
   },
-  "position": 1
+  "position": 0
 }

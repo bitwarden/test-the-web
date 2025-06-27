@@ -1,19 +1,19 @@
 ---
-slug: multi-step-login-no-username
+slug: login-no-username
 title: multi-step login form (no username)
-sidebar_label: multi-step login form (no username)
+sidebar_label: login form (no username)
 sidebar_position: 12
 description: a multi-step form (with no username field) will store user inputs of each step and will POST on final submit
 ---
 
-import { LoginForm, FormSteps } from "@site/src/components/LoginForm";
+import { MultiStepForm, FormStep } from "@site/src/components/MultiStepForm";
 
 <div className="container margin-vert--xl">
   <div className="row">
     <div className="card col col--12 padding--md">
-      <LoginForm
-        action="/login"
-        formSteps={[FormSteps.Email, FormSteps.Password]}
+      <MultiStepForm
+        action="/account"
+        formSteps={[FormStep.Email, FormStep.Password]}
       />
     </div>
   </div>
