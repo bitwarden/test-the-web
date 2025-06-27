@@ -4,7 +4,6 @@ export const ROUTES = {
   ACCOUNT: "/account",
   IDENTITY: "/identity",
   LOGIN: "/login",
-  SPLIT_MULTI_STEP: "/split-multi-step",
   PAYMENT: "/payment",
   SEARCH: "/search",
   WELL_KNOWN_CHANGE_PASSWORD: "/.well-known/change-password",
