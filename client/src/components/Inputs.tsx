@@ -100,7 +100,7 @@ export function NewPasswordInput({
       <input
         ref={inputRef}
         type="password"
-        name="update-password"
+        name="new-password"
         autoComplete="new-password"
         id="new-password"
         required
