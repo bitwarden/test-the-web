@@ -114,12 +114,6 @@ app
   );
 
 app
-  .route(ROUTES.SPLIT_MULTI_STEP)
-  .post((request: Request, response: Response) =>
-    handleRequest(request, response, ROUTES.SPLIT_MULTI_STEP),
-  );
-
-app
   .route(ROUTES.PAYMENT)
   .post((request: Request, response: Response) =>
     handleRequest(request, response, ROUTES.PAYMENT),
