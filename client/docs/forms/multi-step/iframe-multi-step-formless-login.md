@@ -9,7 +9,7 @@ as_seen_on: icloud.com
 
 <iframe
   id="test-iframe"
-  src="/forms/multi-step/multi-step-formless-login?docusaurus-data-bare-page=true"
+  src="/forms/multi-step/formless-login?docusaurus-data-bare-page=true"
   class="margin-vert--sm"
   style="overflow-y: hidden; width: 100%; height: 310px;"
   scrolling="no"

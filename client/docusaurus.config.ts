@@ -88,7 +88,6 @@ const config: Config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: true,
         },
       },
       image: "img/logo-512x512.png",

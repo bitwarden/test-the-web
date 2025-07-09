@@ -72,7 +72,7 @@ export function CurrentPasswordInput({
 }) {
   return (
     <div className="row margin-bottom--md">
-      <label htmlFor="password" className="margin-right--sm">
+      <label htmlFor="current-password" className="margin-right--sm">
         Current Password
       </label>
       <input
@@ -94,7 +94,7 @@ export function NewPasswordInput({
 }) {
   return (
     <div className="row margin-bottom--md">
-      <label htmlFor="new-password" className="col col--3">
+      <label htmlFor="new-password" className="margin-right--sm">
         New password
       </label>
       <input
@@ -110,14 +110,10 @@ export function NewPasswordInput({
   );
 }
 
-export function ConfirmNewPasswordInput({
-  inputRef,
-}: {
-  inputRef?: RefObject<HTMLInputElement>;
-}) {
+export function ConfirmNewPasswordInput() {
   return (
     <div className="row margin-bottom--md">
-      <label htmlFor="new-password-retype" className="col col--3">
+      <label htmlFor="new-password-retype" className="margin-right--sm">
         Confirm new password
       </label>
       <input
