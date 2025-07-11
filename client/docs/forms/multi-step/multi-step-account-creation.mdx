@@ -1,0 +1,24 @@
+---
+slug: create-account
+title: multi-step account creation form
+sidebar_label: create account
+sidebar_position: 0
+description: a multi-step account creation form has an email, followed by password and confirm password step
+---
+
+import { MultiStepForm, FormStep } from "@site/src/components/MultiStepForm";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <MultiStepForm
+        action="/account"
+        formSteps={[
+          FormStep.Email,
+          [FormStep.Password, FormStep.ConfirmPassword],
+        ]}
+      />
+    </div>
+  </div>
+</div>
+<hr />

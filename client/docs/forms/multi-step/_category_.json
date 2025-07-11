@@ -1,0 +1,10 @@
+{
+  "collapsed": true,
+  "label": "Multi-Step",
+  "link": {
+    "type": "generated-index",
+    "slug": "multi-step",
+    "description": "Patterns for multi-step forms (fields on different steps)"
+  },
+  "position": 1
+}

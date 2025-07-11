@@ -1,0 +1,21 @@
+---
+slug: email-username-login
+title: multi-step email & username login form
+sidebar_label: email & username login
+sidebar_position: 2
+description: a multi-step form will store user inputs of each step and will POST on final submit
+---
+
+import { MultiStepForm, FormStep } from "@site/src/components/MultiStepForm";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <MultiStepForm
+        action="/login"
+        formSteps={[FormStep.Username, FormStep.Email, FormStep.Password]}
+      />
+    </div>
+  </div>
+</div>
+<hr />
