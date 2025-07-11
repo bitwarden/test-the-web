@@ -19,6 +19,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     steps:
       - name: Checkout repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -32,7 +34,7 @@ jobs:
 
       - name: Clean install dependencies and build
         env:
-          TEST_WEB_HOST: "${{ secrets.TEST_WEB_HOST || 'https://localhost' }}"
+          TEST_WEB_HOST: "https://localhost"
         run: |
           npm ci
           npm run build
