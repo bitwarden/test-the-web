@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/express": "5.0.2",
-    "@types/node": "22.15.18"
+    "@types/node": "22.16.5"
   },
   "nodemonConfig": {
     "ignore": [
