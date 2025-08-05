@@ -34,7 +34,7 @@
     "@docusaurus/types": "3.8.1",
     "@emotion/babel-plugin": "11.13.5",
     "@emotion/react": "11.14.0",
-    "@emotion/styled": "11.14.0",
+    "@emotion/styled": "11.14.1",
     "@types/react": "19.1.4",
     "mui-one-time-password-input": "5.0.0"
   },
