@@ -1,7 +1,7 @@
 ---
 slug: security-code-signposted
 title: security code (signposted)
-sidebar_position: 20
+sidebar_position: 23
 description: A form that expects an authenticator security code and is signposted
 as_seen_on: Bitwarden login
 ---
