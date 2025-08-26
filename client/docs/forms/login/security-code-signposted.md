@@ -9,14 +9,13 @@ as_seen_on: Bitwarden login
 <div class="container margin-vert--xl">
   <div class="row">
     <div class="card col col--12 padding--md">
-      <form
-        class="card__body"
-        method="POST"
-        action="/login"
-      >
+      <form class="card__body" method="POST" action="/login">
         <div class="row">
           <div class="col col--12 margin-bottom--md">
-            <label class="tw-mb-1 tw-block tw-font-semibold tw-text-main" for="input-3">
+            <label
+              class="tw-mb-1 tw-block tw-font-semibold tw-text-main"
+              for="input-3"
+            >
               <span>Verification code</span>
               <small> (required)</small>
             </label>
@@ -33,12 +32,10 @@ as_seen_on: Bitwarden login
             />
           </div>
           <div class="col col--12 margin-bottom--md">
-          <button
-            type="submit"
-            class="col col--4 button button--primary"
-          >
-            <span>Continue</span>
-          </button>
+            <button type="submit" class="col col--4 button button--primary">
+              <span>Continue</span>
+            </button>
+          </div>
         </div>
       </form>
     </div>
