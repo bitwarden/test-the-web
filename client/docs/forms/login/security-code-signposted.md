@@ -2,7 +2,7 @@
 slug: security-code-signposted
 title: security code (signposted)
 sidebar_position: 23
-description: A form that expects an authenticator security code and is signposted
+description: A form that expects an authenticator security code and has a single input signposted with an `autocomplete` attribute value of `one-time-code`
 as_seen_on: Bitwarden login
 ---
 
