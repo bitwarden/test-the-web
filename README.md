@@ -2,9 +2,31 @@
 
 Test the Web enables anyone to quickly test common browser interactions on the web with mock interfaces.
 
+## Goals and Intent
+
+Test the Web is a "pattern library". The primary goal of the project is to capture various patterns (both good and bad) in a working state so as to facilitate testing and developing experiences that interact with those patterns.
+
+### Pattern Capture Philosophy
+
+With the aforementioned goals and intent in mind, patterns should:
+
+- Represent real-world cases, avoiding theoretical or manufactured scenarios.
+- Be represented in the abstract, not referencing site/app-specific code
+- Not capture concerns beyond the described patterns (e.g. unused class names, code for experiences not included, etc.).
+- Avoid alterations to previously published patterns which will change the core functionality of the pattern (instead prefer creating new patterns with the modifications desired).
+- Not create or alter patterns for the sake of passing tests or resolving broken functionality of external systems (e.g. [BIT](https://github.com/bitwarden/browser-interactions-testing)).
+- Treat all data used in patterns as ephemeral, avoiding storage unless required and described by the represented pattern.
+
+## Limitations
+
+- While the project aspires to capture all common patterns of the web, this is largely expected to be unachievable in whole, given the size and ever-changing nature of the web.
+- Because the project is presently leveraging [docusaurus](https://github.com/facebook/docusaurus), complex or case-specific patterns can sometimes be difficult to replicate precisely.
+
 ## Requirements
 
-- [npm](https://www.npmjs.com/)
+- [git](https://git-scm.com/downloads)
+- [node](https://nodejs.org/en)
+- [NVM](https://github.com/nvm-sh/nvm#installing-and-updating) (optional, if not using nvm; manually manage your node version to `.nvmrc`)
 
 ## Quick-start
 
@@ -16,7 +38,7 @@ Test the Web enables anyone to quickly test common browser interactions on the w
 
 ## That, but with more options
 
-Optionally, you can override some configurations by creating a dotfile named `.env` in the `/api` directory (see `.env.example` for details). All the other usual configuration options around Node.js, Docker, [Express](https://expressjs.com/), [Docusaurus](https://docusaurus.io/), etc. apply.
+Optionally, you can override some configurations by creating a dotfile named `.env` in the `/api` directory (see `.env.example` for details). All the other usual configuration options around Node.js, Docker, [Express](https://expressjs.com/), [Docusaurus](https://docusaurus.io), etc. apply.
 
 ## SSL / Self-signed certificates
 
