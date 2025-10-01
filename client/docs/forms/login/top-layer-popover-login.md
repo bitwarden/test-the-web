@@ -1,9 +1,8 @@
 ---
 slug: top-layer-popover
-title: popover login form
-sidebar_label: popover
-description: a login form within a top-layer popover that will POST the input values on submit
-unlisted: true
+title: top-layer popover login form
+sidebar_label: top-layer popover
+description: a login form that opens within a top-layer popover that will POST the input values on submit
 ---
 
 <script src="/js/popover-login.js" defer="defer"></script>
@@ -11,7 +10,14 @@ unlisted: true
 <div class="container margin-vert--xl">
   <div class="row">
     <div class="card col col--12 padding--md">
-      <div id="formPopover" popover="manual">
+      <button
+        id="open-popover-button"
+        type="button"
+        class="button button--primary col col--4"
+      >
+        Open Login Popover
+      </button>
+      <div id="formPopover" popover="manual" class="padding--md">
         <form
           class="card__body"
           method="POST"
@@ -37,8 +43,9 @@ unlisted: true
               required
             />
           </div>
-          <div class="row">
-            <button type="submit" class="button button--primary">Login</button>
+          <div class="row margin-bottom--0">
+            <button type="submit" class="button button--primary margin-right--sm margin-bottom--sm col col--4">Login</button>
+            <button id="close-popover-button" type="button" class="button button--secondary margin-bottom--sm col col--4">Close</button>
           </div>
         </form>
       </div>
