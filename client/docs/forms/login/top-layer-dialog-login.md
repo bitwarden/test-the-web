@@ -1,17 +1,28 @@
 ---
 slug: top-layer-dialog
-title: dialog login form
-sidebar_label: dialog
-description: a login form within a top-layer dialog that will POST the input values on submit
-unlisted: true
+title: top-layer dialog login form
+sidebar_label: top-layer dialog
+description: a login form within a top-layer dialog (with a styled `::backdrop` pseudo-element) that will POST the input values on submit
 ---
 
 <script src="/js/dialog-login.js" defer="defer"></script>
 
+<style>
+  ::backdrop {
+    background: rgba(59, 139, 165, 0.3);
+  }
+</style>
 <div class="container margin-vert--xl">
   <div class="row">
     <div class="card col col--12 padding--md">
-      <dialog id="formDialog" role="dialog">
+      <button
+        id="open-dialog-button"
+        type="button"
+        class="button button--primary col col--4"
+      >
+        Open Login Dialog
+      </button>
+      <dialog id="formDialog" closedby="any">
         <form
           class="card__body"
           method="POST"
@@ -24,6 +35,7 @@ unlisted: true
               id="username"
               name="username"
               placeholder="e.g. jsmith, jsmith@example.com"
+              autofocus
               required
             />
           </div>
@@ -38,7 +50,8 @@ unlisted: true
             />
           </div>
           <div class="row">
-            <button type="submit" class="button button--primary">Login</button>
+            <button type="submit" class="button button--primary margin-right--sm margin-bottom--sm col col--4">Login</button>
+            <button id="close-dialog-button" type="button" class="button button--secondary margin-bottom--sm col col--4">Close</button>
           </div>
         </form>
       </dialog>
