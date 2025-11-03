@@ -1,0 +1,25 @@
+---
+slug: login-security-question
+title: multi-step login form with security question
+sidebar_label: login with security question
+sidebar_position: 13
+description: a multi-step form that includes a security question to illustrate Bitwarden's answer generation
+---
+
+import { MultiStepForm, FormStep } from "@site/src/components/MultiStepForm";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <MultiStepForm
+        action="/login"
+        formSteps={[
+          FormStep.Email,
+          FormStep.Password,
+          FormStep.SecurityQuestion,
+        ]}
+      />
+    </div>
+  </div>
+</div>
+<hr />

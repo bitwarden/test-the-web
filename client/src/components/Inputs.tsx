@@ -128,6 +128,30 @@ export function ConfirmNewPasswordInput() {
   );
 }
 
+export function SecurityQuestionInput({
+  inputRef,
+}: {
+  inputRef?: RefObject<HTMLInputElement>;
+}) {
+  return (
+    <div className="row margin-bottom--md">
+      <label htmlFor="security-question" className="margin-right--sm">
+        What was the name of your first pet?
+      </label>
+      <input
+        ref={inputRef}
+        type="text"
+        name="security-question"
+        id="security-question"
+        autoComplete="off"
+        spellCheck="false"
+        placeholder="e.g. Fluffy"
+        required
+      />
+    </div>
+  );
+}
+
 export function SubmitButton({
   handleSelect,
   label,
@@ -139,9 +163,8 @@ export function SubmitButton({
     <div className="row">
       <button
         type="submit"
-        className="button button--primary"
+        className="col col--4 col--offset-4 button button--primary"
         onClick={handleSelect}
-        onSelect={handleSelect}
       >
         {label}
       </button>

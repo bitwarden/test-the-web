@@ -6,6 +6,7 @@ import {
   EmailInput,
   NewPasswordInput,
   PasswordInput,
+  SecurityQuestionInput,
   SubmitButton,
   UsernameInput,
 } from "./Inputs";
@@ -17,6 +18,7 @@ export const FormStep = {
   NewPassword: "new-password",
   CurrentPassword: "current-password",
   ConfirmPassword: "confirm-password",
+  SecurityQuestion: "security-question",
 } as const;
 
 type FormStep = (typeof FormStep)[keyof typeof FormStep];
@@ -25,6 +27,7 @@ type FormValues = {
   username?: string;
   email?: string;
   password?: string;
+  "security-question"?: string;
 };
 
 export function MultiStepForm({
@@ -45,6 +48,7 @@ export function MultiStepForm({
     [FormStep.CurrentPassword]: <CurrentPasswordInput />,
     [FormStep.NewPassword]: <NewPasswordInput />,
     [FormStep.ConfirmPassword]: <ConfirmNewPasswordInput />,
+    [FormStep.SecurityQuestion]: <SecurityQuestionInput />,
   };
 
   const [formValues, setFormValues] = useState<FormValues>({});

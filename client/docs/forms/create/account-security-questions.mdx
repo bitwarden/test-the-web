@@ -1,0 +1,100 @@
+---
+slug: create-account-security-questions
+title: account creation form with security questions
+sidebar_label: account with security questions
+sidebar_position: 4
+description: a sign up form requiring an email, password, and multiple security questions for account recovery
+---
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/account">
+        <div className="row margin-bottom--md">
+          <label htmlFor="email" className="margin-right--sm">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autoComplete="email"
+            placeholder="e.g. jsmith@example.com"
+            required
+          />
+        </div>
+        <div className="row margin-bottom--md">
+          <label htmlFor="password" className="margin-right--sm">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autoComplete="new-password"
+            required
+          />
+        </div>
+        <hr className="margin-vert--lg" />
+        <h3>Security Questions</h3>
+        <p className="margin-bottom--md text--secondary">
+          <small>
+            Please answer these questions to help secure your account. These
+            will be used for account recovery.
+          </small>
+        </p>
+        <div className="row margin-bottom--md">
+          <label htmlFor="security-question-1" className="margin-right--sm">
+            What was the name of your first pet?
+          </label>
+          <input
+            type="text"
+            id="security-question-1"
+            name="security-question-1"
+            autoComplete="off"
+            spellCheck="false"
+            placeholder="e.g. Fluffy"
+            required
+          />
+        </div>
+        <div className="row margin-bottom--md">
+          <label htmlFor="security-question-2" className="margin-right--sm">
+            What is your mother's maiden name?
+          </label>
+          <input
+            type="text"
+            id="security-question-2"
+            name="security-question-2"
+            autoComplete="off"
+            spellCheck="false"
+            placeholder="e.g. Smith"
+            required
+          />
+        </div>
+        <div className="row margin-bottom--md">
+          <label htmlFor="security-question-3" className="margin-right--sm">
+            What was the name of your elementary school?
+          </label>
+          <input
+            type="text"
+            id="security-question-3"
+            name="security-question-3"
+            autoComplete="off"
+            spellCheck="false"
+            placeholder="e.g. Lincoln Elementary"
+            required
+          />
+        </div>
+        <div className="row">
+          <button
+            type="submit"
+            className="col col--4 col--offset-4 button button--primary"
+          >
+            Create Account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />
