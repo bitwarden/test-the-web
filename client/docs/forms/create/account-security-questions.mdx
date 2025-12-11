@@ -6,6 +6,12 @@ sidebar_position: 4
 description: a sign up form requiring an email, password, and multiple security questions for account recovery
 ---
 
+import {
+  FirstPetNameInput,
+  MothersMaidenNameInput,
+  ElementarySchoolInput,
+} from "@site/src/components/Inputs";
+
 <div className="container margin-vert--xl">
   <div className="row">
     <div className="card col col--12 padding--md">
@@ -43,54 +49,12 @@ description: a sign up form requiring an email, password, and multiple security 
             will be used for account recovery.
           </small>
         </p>
-        <div className="row margin-bottom--md">
-          <label htmlFor="security-question-1" className="margin-right--sm">
-            What was the name of your first pet?
-          </label>
-          <input
-            type="text"
-            id="security-question-1"
-            name="security-question-1"
-            autoComplete="off"
-            spellCheck="false"
-            placeholder="e.g. Fluffy"
-            required
-          />
-        </div>
-        <div className="row margin-bottom--md">
-          <label htmlFor="security-question-2" className="margin-right--sm">
-            What is your mother's maiden name?
-          </label>
-          <input
-            type="text"
-            id="security-question-2"
-            name="security-question-2"
-            autoComplete="off"
-            spellCheck="false"
-            placeholder="e.g. Smith"
-            required
-          />
-        </div>
-        <div className="row margin-bottom--md">
-          <label htmlFor="security-question-3" className="margin-right--sm">
-            What was the name of your elementary school?
-          </label>
-          <input
-            type="text"
-            id="security-question-3"
-            name="security-question-3"
-            autoComplete="off"
-            spellCheck="false"
-            placeholder="e.g. Lincoln Elementary"
-            required
-          />
-        </div>
-        <div className="row">
-          <button
-            type="submit"
-            className="col col--4 col--offset-4 button button--primary"
-          >
-            Create Account
+        <FirstPetNameInput />
+        <MothersMaidenNameInput />
+        <ElementarySchoolInput />
+        <div class="col col--12">
+          <button type="submit" class="button button--primary">
+            Create account
           </button>
         </div>
       </form>

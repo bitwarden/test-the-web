@@ -130,25 +130,82 @@ export function ConfirmNewPasswordInput() {
 
 export function SecurityQuestionInput({
   inputRef,
+  question = "What was the name of your first pet?",
+  placeholder = "e.g. Fluffy",
+  name = "security-question",
+  id = "security-question",
 }: {
   inputRef?: RefObject<HTMLInputElement>;
+  question?: string;
+  placeholder?: string;
+  name?: string;
+  id?: string;
 }) {
   return (
     <div className="row margin-bottom--md">
-      <label htmlFor="security-question" className="margin-right--sm">
-        What was the name of your first pet?
+      <label htmlFor={id} className="margin-right--sm">
+        {question}
       </label>
       <input
         ref={inputRef}
         type="text"
-        name="security-question"
-        id="security-question"
+        name={name}
+        id={id}
         autoComplete="off"
         spellCheck="false"
-        placeholder="e.g. Fluffy"
+        placeholder={placeholder}
         required
       />
     </div>
+  );
+}
+
+// Common security question variants for easy reuse
+export function MothersMaidenNameInput({
+  inputRef,
+}: {
+  inputRef?: RefObject<HTMLInputElement>;
+}) {
+  return (
+    <SecurityQuestionInput
+      inputRef={inputRef}
+      question="What is your mother's maiden name?"
+      placeholder="e.g. Smith"
+      name="mothers-maiden-name"
+      id="mothers-maiden-name"
+    />
+  );
+}
+
+export function FirstPetNameInput({
+  inputRef,
+}: {
+  inputRef?: RefObject<HTMLInputElement>;
+}) {
+  return (
+    <SecurityQuestionInput
+      inputRef={inputRef}
+      question="What was the name of your first pet?"
+      placeholder="e.g. Fluffy"
+      name="first-pet-name"
+      id="first-pet-name"
+    />
+  );
+}
+
+export function ElementarySchoolInput({
+  inputRef,
+}: {
+  inputRef?: RefObject<HTMLInputElement>;
+}) {
+  return (
+    <SecurityQuestionInput
+      inputRef={inputRef}
+      question="What was the name of your elementary school?"
+      placeholder="e.g. Lincoln Elementary"
+      name="elementary-school"
+      id="elementary-school"
+    />
   );
 }
 
