@@ -1,0 +1,65 @@
+---
+slug: login-security-questions
+title: login form with security questions
+sidebar_label: security questions
+sidebar_position: 30
+description: a sign up form requiring an email, password, and multiple security questions for account recovery
+---
+
+import {
+  FirstPetNameInput,
+  MothersMaidenNameInput,
+  ElementarySchoolInput,
+} from "@site/src/components/Inputs";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/login">
+        <div className="row margin-bottom--md">
+          <label for="username" class="margin-right--sm">
+            Username
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="e.g. jsmith, jsmith@example.com"
+            required
+          />
+        </div>
+        <div class="row margin-bottom--md">
+          <label for="password" class="margin-right--sm">
+            Password
+          </label>
+          <input
+            autocomplete="password"
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+        <hr className="margin-vert--lg" />
+        <div className="row margin-bottom--sm">
+          <h3>Security Questions</h3>
+          <p className="text--secondary">
+            <small>
+              Please answer these questions to help secure your account. These
+              will be used for account recovery.
+            </small>
+          </p>
+        </div>
+        <FirstPetNameInput />
+        <MothersMaidenNameInput />
+        <ElementarySchoolInput />
+        <div class="row">
+          <button type="submit" class="button button--primary">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />
