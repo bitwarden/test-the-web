@@ -17,46 +17,44 @@ import {
     <div className="card col col--12 padding--md">
       <form className="card__body" method="POST" action="/login">
         <div className="row margin-bottom--md">
-          <label for="username" class="margin-right--sm">
-            Username
-          </label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="e.g. jsmith, jsmith@example.com"
-            required
-          />
-        </div>
-        <div class="row margin-bottom--md">
-          <label for="password" class="margin-right--sm">
-            Password
-          </label>
-          <input
-            autocomplete="password"
-            type="password"
-            id="password"
-            name="password"
-            required
-          />
+          <div class="col col--12 margin-bottom--md">
+            <label for="username">Username</label>
+            <br />
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="e.g. jsmith, jsmith@example.com"
+              required
+            />
+          </div>
+          <div class="col col--12 margin-bottom--md">
+            <label for="password">Password</label>
+            <br />
+            <input
+              autocomplete="password"
+              type="password"
+              id="password"
+              name="password"
+              required
+            />
+          </div>
         </div>
         <hr className="margin-vert--lg" />
-        <div className="row margin-bottom--sm">
-          <h3>Security Questions</h3>
-          <p className="text--secondary">
-            <small>
-              Please answer these questions to help secure your account. These
-              will be used for account recovery.
-            </small>
-          </p>
+        <h3>Security Questions</h3>
+        <p className="text--secondary">
+          Please answer the following questions to help secure your account.
+          This will be used for account recovery.
+        </p>
+        <div class="col col--12">
+          <FirstPetNameInput />
         </div>
-        <FirstPetNameInput />
-        <MothersMaidenNameInput />
-        <ElementarySchoolInput />
         <div class="row">
-          <button type="submit" class="button button--primary">
-            Login
-          </button>
+          <div class="col col--12">
+            <button type="submit" class="col col--3 button button--primary">
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </div>
