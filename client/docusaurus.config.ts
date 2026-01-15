@@ -28,7 +28,6 @@ const config: Config = {
   projectName: "test-the-web", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   clientModules: [
     "./src/modules/customDataAttributes.js",
@@ -70,6 +69,9 @@ const config: Config = {
     // experimental: inline HTML in `.mdx` files will be treated as JSX; `.md` files will preserve raw HTML
     // see: https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability
     format: "detect",
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
     // "Docusaurus v3 comes with MDX v1 compatibility options, that are turned on by default."
     mdx1Compat: {
       comments: false,

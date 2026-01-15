@@ -3,3 +3,10 @@ build
 dist
 node_modules
 .docusaurus
+
+# Per Docusaurus docs: https://docusaurus.io/docs/markdown-features/react
+# "Prettier, the most popular formatter, supports only the legacy MDX v1.
+# If you get an unintentional formatting result, you may want to add
+# {/* prettier-ignore */} before the problematic area, or add *.mdx to your
+# .prettierignore, until Prettier has proper support for MDX v3."
+*.mdx
