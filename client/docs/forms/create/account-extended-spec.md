@@ -2,7 +2,7 @@
 slug: create-account-extended-spec
 title: spec-compliant simple account creation form with identity information
 sidebar_label: account (extended info, spec)
-sidebar_position: 3
+sidebar_position: 4
 description: an sign up form that is structured to conform with the standard autocomplete spec, and contains valid autocomplete attributes on all fields
 ---
 

@@ -1,0 +1,66 @@
+---
+slug: create-account-security-questions
+title: account creation form with security questions
+sidebar_label: account with security questions
+sidebar_position: 5
+description: a sign up form requiring an email, password, and multiple security questions for account recovery
+---
+
+import {
+  FirstPetNameInput,
+  MothersMaidenNameInput,
+  ElementarySchoolInput,
+} from "@site/src/components/Inputs";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/account">
+        <div class="row">
+          <div class="col col--12 margin-bottom--md">
+            <label for="email">
+              Enter the email you'd like to create an account with
+            </label>
+            <br />
+            <input
+              autocomplete="email"
+              id="email"
+              name="email"
+              placeholder="e.g. jsmith@example.com"
+              required
+              type="text"
+            />
+          </div>
+          <div class="col col--12 margin-bottom--md">
+            <label for="password">Create a password</label>
+            <br />
+            <input
+              autocomplete="new-password"
+              id="password"
+              name="password"
+              required
+              type="password"
+            />
+          </div>
+        </div>
+        <hr className="margin-vert--lg" />
+        <h3>Security Questions</h3>
+        <p className="margin-bottom--md">
+          Please answer these questions to help secure your account. These will
+          be used for account recovery.
+        </p>
+        <div class="col col--12">
+          <FirstPetNameInput />
+          <MothersMaidenNameInput />
+          <ElementarySchoolInput />
+        </div>
+        <div class="row">
+          <div class="col col--12">
+            <button type="submit" class="col col--3 button button--primary">Sign up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />

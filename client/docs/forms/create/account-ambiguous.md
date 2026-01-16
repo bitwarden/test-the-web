@@ -2,6 +2,7 @@
 slug: create-account-ambiguous
 title: ambiguous account creation form
 sidebar_label: account (ambiguous)
+sidebar_position: 2
 description: a sign up form with minimal identifying attributes, requiring an email and password - it will POST the input values on submit
 ---
 
