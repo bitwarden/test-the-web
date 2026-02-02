@@ -34,7 +34,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.2.3",
     "nodemon": "3.1.10",
-    "prettier": "3.7.3",
+    "prettier": "3.8.1",
     "rimraf": "6.1.2",
     "typescript": "5.9.2"
   },
