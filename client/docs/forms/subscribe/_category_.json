@@ -1,0 +1,9 @@
+{
+  "collapsed": true,
+  "label": "Subscribe",
+  "link": {
+    "type": "generated-index",
+    "description": "Newsletter and subscription forms — the extension should not autofill login credentials on these pages"
+  },
+  "position": 7
+}
