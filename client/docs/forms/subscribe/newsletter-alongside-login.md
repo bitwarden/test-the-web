@@ -3,7 +3,7 @@ slug: newsletter-alongside-login
 title: newsletter subscribe form alongside a password-only login form
 sidebar_label: newsletter alongside login
 sidebar_position: 3
-description: a page with both a newsletter signup form (opaque email field id/name) and a separate login form containing only a password field — the extension should not use the newsletter email as a cross-form username fallback
+description: a page with both a newsletter signup form (opaque email field id/name) and a separate login form containing only a password field
 ---
 
 <div class="container margin-vert--xl">

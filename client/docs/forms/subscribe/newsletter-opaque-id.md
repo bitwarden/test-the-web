@@ -3,7 +3,7 @@ slug: newsletter-opaque-id
 title: newsletter subscribe form with opaque field id
 sidebar_label: opaque id newsletter
 sidebar_position: 2
-description: a newsletter signup form whose email field has no username-related keywords in its id, name, or label — only type="email" signals its purpose; the extension should not autofill login credentials here
+description: a newsletter signup form whose email field has no username-related keywords in its `id`, `name`, or `label` — only `type="email"` signals its purpose.
 ---
 
 <div class="container margin-vert--xl">

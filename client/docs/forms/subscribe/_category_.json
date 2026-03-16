@@ -3,7 +3,7 @@
   "label": "Subscribe",
   "link": {
     "type": "generated-index",
-    "description": "Newsletter and subscription forms — the extension should not autofill login credentials on these pages"
+    "description": "Newsletter and subscription forms"
   },
   "position": 7
 }

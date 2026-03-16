@@ -3,7 +3,7 @@ slug: newsletter-simple
 title: simple newsletter subscribe form
 sidebar_label: simple newsletter
 sidebar_position: 1
-description: a newsletter signup form with an email-named input field; the extension should not autofill login credentials here
+description: a newsletter signup form with an email-named input field
 ---
 
 <div class="container margin-vert--xl">
