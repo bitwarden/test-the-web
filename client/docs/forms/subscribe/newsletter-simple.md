@@ -1,21 +1,20 @@
 ---
 slug: newsletter-simple
 title: simple newsletter subscribe form
-sidebar_label: simple newsletter
-sidebar_position: 1
+sidebar_label: simple
 description: a newsletter signup form with an email-named input field
 ---
 
 <div class="container margin-vert--xl">
   <div class="row">
     <div class="card col col--12 padding--md">
+      <h3>Stay in the loop</h3>
       <form
         class="card__body"
         method="POST"
         action="/subscribe"
         id="newsletter-form"
       >
-        <h3>Stay in the loop</h3>
         <div class="row margin-bottom--md">
           <label for="email" class="margin-right--sm">Email address</label>
           <input
