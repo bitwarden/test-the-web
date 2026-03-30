@@ -22,6 +22,7 @@
     "postinstall": "(npm run ci:api) && (npm run ci:client)",
     "prepare": "husky",
     "prettier": "prettier --write .",
+    "serve-client": "cd client && npm run serve",
     "spellcheck": "cspell lint \"**/*.md{x,}\"",
     "typecheck:api": "cd api && npm run typecheck",
     "typecheck:client": "cd client && npm run typecheck",
