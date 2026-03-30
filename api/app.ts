@@ -120,6 +120,12 @@ app
   );
 
 app
+  .route(ROUTES.SUBSCRIBE)
+  .post((request: Request, response: Response) =>
+    handleRequest(request, response, ROUTES.SUBSCRIBE),
+  );
+
+app
   .route(ROUTES.WELL_KNOWN_CHANGE_PASSWORD)
   .get((request: Request, response: Response) =>
     response.redirect(ROUTES.UPDATE_PASSWORD_FORM),
