@@ -117,6 +117,12 @@ const config: Config = {
             label: "Forms",
           },
           {
+            type: "docSidebar",
+            sidebarId: "scenariosSidebar",
+            position: "left",
+            label: "Scenarios",
+          },
+          {
             type: "custom-githubIcon",
             href: "https://github.com/bitwarden/test-the-web",
             height: 24,
