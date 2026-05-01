@@ -41,7 +41,10 @@ export function RerenderingInputGrid() {
   const [elapsed, setElapsed] = useState(0);
   const [metrics, setMetrics] = useState<MetricsState>(INITIAL_METRICS);
 
+  /** marks the beginning of the current contiguous run. */
   const startedAtRef = useRef<number | null>(null);
+  /** holds the sum of all completed prior runs (since reset). */
+  const accumulatedMsRef = useRef(0);
   const baselineHeapRef = useRef<number | null>(null);
   const longTaskCountRef = useRef(0);
   const renderStartRef = useRef(0);
@@ -72,10 +75,6 @@ export function RerenderingInputGrid() {
       return;
     }
 
-    if (startedAtRef.current === null) {
-      startedAtRef.current = Date.now();
-    }
-
     const id = window.setInterval(
       () => {
         renderStartRef.current = performance.now();
@@ -94,7 +93,9 @@ export function RerenderingInputGrid() {
 
     const id = window.setInterval(() => {
       if (startedAtRef.current !== null) {
-        setElapsed(Math.round((Date.now() - startedAtRef.current) / 1000));
+        const totalMs =
+          accumulatedMsRef.current + (Date.now() - startedAtRef.current);
+        setElapsed(Math.round(totalMs / 1000));
       }
     }, ELAPSED_POLL_MS);
 
@@ -174,16 +175,24 @@ export function RerenderingInputGrid() {
     if (running) {
       return;
     }
+
     if (tickCount === 0) {
       // Render an initial tick immediately so the grid appears before the
       // first interval fires.
       renderStartRef.current = performance.now();
       setTickCount(1);
     }
+
+    startedAtRef.current = Date.now();
     setRunning(true);
   }
 
   function stop() {
+    if (startedAtRef.current !== null) {
+      accumulatedMsRef.current += Date.now() - startedAtRef.current;
+      startedAtRef.current = null;
+    }
+
     setRunning(false);
   }
 
@@ -192,6 +201,7 @@ export function RerenderingInputGrid() {
     setTickCount(0);
     setElapsed(0);
     startedAtRef.current = null;
+    accumulatedMsRef.current = 0;
     baselineHeapRef.current = null;
     longTaskCountRef.current = 0;
     // Disarm the post-render measurement; otherwise the useLayoutEffect that
@@ -357,7 +367,7 @@ function Metrics({ ticks, elapsed, metrics }: MetricsProps) {
 interface GridProps {
   count: number;
   tickCount: number;
-  scrollerRef: RefObject<HTMLDivElement>;
+  scrollerRef: RefObject<HTMLDivElement | null>;
 }
 
 function Grid({ count, tickCount, scrollerRef }: GridProps) {
