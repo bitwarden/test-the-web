@@ -50,6 +50,10 @@ export function RerenderingInputGrid() {
   const renderStartRef = useRef(0);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const loadingMoreRef = useRef(false);
+  // Persists user-entered data across re-renders. Using a ref (not state)
+  // so keystrokes don't trigger renders that would interfere with the
+  // simulation cadence.
+  const cellValuesRef = useRef<Map<string, string>>(new Map());
 
   useEffect(() => {
     if (typeof PerformanceObserver === "undefined") {
@@ -204,6 +208,7 @@ export function RerenderingInputGrid() {
     accumulatedMsRef.current = 0;
     baselineHeapRef.current = null;
     longTaskCountRef.current = 0;
+    cellValuesRef.current.clear();
     // Disarm the post-render measurement; otherwise the useLayoutEffect that
     // depends on [tickCount, count] would fire on the 0-tickCount re-render
     // and overwrite INITIAL_METRICS with a freshly-sampled set.
@@ -242,7 +247,12 @@ export function RerenderingInputGrid() {
       />
       <hr />
       <Metrics ticks={tickCount} elapsed={elapsed} metrics={metrics} />
-      <Grid count={count} tickCount={tickCount} scrollerRef={scrollerRef} />
+      <Grid
+        count={count}
+        tickCount={tickCount}
+        scrollerRef={scrollerRef}
+        cellValuesRef={cellValuesRef}
+      />
     </Container>
   );
 }
@@ -368,22 +378,29 @@ interface GridProps {
   count: number;
   tickCount: number;
   scrollerRef: RefObject<HTMLDivElement | null>;
+  cellValuesRef: RefObject<Map<string, string>>;
 }
 
-function Grid({ count, tickCount, scrollerRef }: GridProps) {
-  const rows: React.JSX.Element[] = [];
+function Grid({ count, tickCount, scrollerRef, cellValuesRef }: GridProps) {
+  let rows: React.JSX.Element[] = [];
 
   if (tickCount === 0) {
-    rows.push(
+    rows = [
       <tr key="placeholder">
         <PlaceholderCell colSpan={8}>
           Click "Start" to populate data.
         </PlaceholderCell>
       </tr>,
-    );
+    ];
   } else {
     for (let i = 0; i < count; i++) {
-      rows.push(<GridRow key={`${tickCount}-${i}`} index={i} />);
+      rows.push(
+        <GridRow
+          key={`${tickCount}-${i}`}
+          index={i}
+          cellValuesRef={cellValuesRef}
+        />,
+      );
     }
   }
 
@@ -426,7 +443,20 @@ function HeapDelta({ value }: { value: number | null }) {
   return <strong>{formatted}</strong>;
 }
 
-function GridRow({ index }: { index: number }) {
+interface GridRowProps {
+  index: number;
+  cellValuesRef: RefObject<Map<string, string>>;
+}
+
+function GridRow({ index, cellValuesRef }: GridRowProps) {
+  const getValue = (field: string) =>
+    cellValuesRef.current.get(`${index}-${field}`) ?? "";
+
+  const handleChange =
+    (field: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      cellValuesRef.current.set(`${index}-${field}`, event.target.value);
+    };
+
   return (
     <tr>
       <Cell>{index + 1}</Cell>
@@ -436,6 +466,8 @@ function GridRow({ index }: { index: number }) {
           id={`email-${index}`}
           name={`email-${index}`}
           autoComplete="email"
+          defaultValue={getValue("email")}
+          onChange={handleChange("email")}
         />
       </Cell>
       <Cell>
@@ -444,6 +476,8 @@ function GridRow({ index }: { index: number }) {
           id={`username-${index}`}
           name={`username-${index}`}
           autoComplete="username"
+          defaultValue={getValue("username")}
+          onChange={handleChange("username")}
         />
       </Cell>
       <Cell>
@@ -452,6 +486,8 @@ function GridRow({ index }: { index: number }) {
           id={`given-name-${index}`}
           name={`given-name-${index}`}
           autoComplete="given-name"
+          defaultValue={getValue("given-name")}
+          onChange={handleChange("given-name")}
         />
       </Cell>
       <Cell>
@@ -460,6 +496,8 @@ function GridRow({ index }: { index: number }) {
           id={`family-name-${index}`}
           name={`family-name-${index}`}
           autoComplete="family-name"
+          defaultValue={getValue("family-name")}
+          onChange={handleChange("family-name")}
         />
       </Cell>
       <Cell>
@@ -468,6 +506,8 @@ function GridRow({ index }: { index: number }) {
           id={`tel-${index}`}
           name={`tel-${index}`}
           autoComplete="tel"
+          defaultValue={getValue("tel")}
+          onChange={handleChange("tel")}
         />
       </Cell>
       <Cell>
@@ -476,6 +516,8 @@ function GridRow({ index }: { index: number }) {
           id={`location-${index}`}
           name={`location-${index}`}
           autoComplete="address-level2"
+          defaultValue={getValue("location")}
+          onChange={handleChange("location")}
         />
       </Cell>
       <Cell>
@@ -484,6 +526,8 @@ function GridRow({ index }: { index: number }) {
           id={`notes-${index}`}
           name={`notes-${index}`}
           autoComplete="off"
+          defaultValue={getValue("notes")}
+          onChange={handleChange("notes")}
         />
       </Cell>
     </tr>
