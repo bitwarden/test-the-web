@@ -394,13 +394,7 @@ function Grid({ count, tickCount, scrollerRef, cellValuesRef }: GridProps) {
     ];
   } else {
     for (let i = 0; i < count; i++) {
-      rows.push(
-        <GridRow
-          key={`${tickCount}-${i}`}
-          index={i}
-          cellValuesRef={cellValuesRef}
-        />,
-      );
+      rows.push(<GridRow key={i} index={i} cellValuesRef={cellValuesRef} />);
     }
   }
 
