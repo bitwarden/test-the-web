@@ -1,0 +1,9 @@
+{
+  "collapsed": true,
+  "label": "Scenarios",
+  "link": {
+    "type": "generated-index",
+    "description": "Behavioral scenarios that stress browser interaction concerns (security, stability, etc.)"
+  },
+  "position": 1
+}

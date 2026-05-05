@@ -1,0 +1,19 @@
+---
+slug: rerendering-input-grid
+title: rerendering input grid (live-data churn)
+sidebar_label: rerendering input grid
+description: a grid of login inputs whose surrounding wrapper is torn down and rebuilt every X ms; simulates an input table backed by a streaming data source and exercises lifecycle handling
+---
+
+import { RerenderingInputGrid } from "@site/src/components/RerenderingInputGrid";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <div className="card__body">
+        <RerenderingInputGrid />
+      </div>
+    </div>
+  </div>
+</div>
+<hr />

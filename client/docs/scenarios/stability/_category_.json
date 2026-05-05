@@ -1,0 +1,9 @@
+{
+  "collapsed": true,
+  "label": "Stability",
+  "link": {
+    "type": "generated-index",
+    "description": "Patterns where the host page itself stresses injected script lifecycle assumptions (DOM churn, live-data re-renders, leak surfaces)"
+  },
+  "position": 1
+}
