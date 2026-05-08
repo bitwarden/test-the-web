@@ -37,7 +37,18 @@
   usernameInput.required = true;
 
   usernameShadow.appendChild(usernameInput);
-  usernameContainer.append(usernameLabel, usernameShadowHost);
+
+  // Mirror for observability — closed shadow roots aren't queryable from outside
+  const usernameMirror = document.createElement("output");
+  usernameMirror.setAttribute("data-mirror", "username");
+  usernameInput.addEventListener("input", () => {
+    usernameMirror.textContent = usernameInput.value;
+  });
+  usernameInput.addEventListener("change", () => {
+    usernameMirror.textContent = usernameInput.value;
+  });
+
+  usernameContainer.append(usernameLabel, usernameShadowHost, usernameMirror);
 
   // Password field container
   const passwordContainer = document.createElement("div");
@@ -56,7 +67,18 @@
   passwordInput.required = true;
 
   passwordShadow.appendChild(passwordInput);
-  passwordContainer.append(passwordLabel, passwordShadowHost);
+
+  // Mirror for observability — closed shadow roots aren't queryable from outside
+  const passwordMirror = document.createElement("output");
+  passwordMirror.setAttribute("data-mirror", "password");
+  passwordInput.addEventListener("input", () => {
+    passwordMirror.textContent = passwordInput.value;
+  });
+  passwordInput.addEventListener("change", () => {
+    passwordMirror.textContent = passwordInput.value;
+  });
+
+  passwordContainer.append(passwordLabel, passwordShadowHost, passwordMirror);
 
   // Submit button container
   const buttonContainer = document.createElement("div");
