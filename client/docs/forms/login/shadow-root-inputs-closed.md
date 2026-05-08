@@ -2,7 +2,7 @@
 slug: shadow-root-inputs-closed
 title: closed shadow-root inputs form
 sidebar_label: shadow-root inputs (closed)
-description: a basic login form within an open shadow-root with inputs within closed shadow-roots. The form will POST the input values on submit
+description: a basic login form within an open shadow-root with inputs within closed shadow-roots. The form will POST the input values on submit. Values in the closed shadow root inputs are mirrored to transparent output nodes for programmatic observability.
 ---
 
 <script src="/js/build-shadow-root-form.js" defer="defer"></script>
