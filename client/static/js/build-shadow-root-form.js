@@ -38,7 +38,7 @@
 
   usernameShadow.appendChild(usernameInput);
 
-  // Mirror for Playwright observability — closed shadow roots aren't queryable from outside
+  // Mirror for observability — closed shadow roots aren't queryable from outside
   const usernameMirror = document.createElement("output");
   usernameMirror.setAttribute("data-mirror", "username");
   usernameInput.addEventListener("input", () => {
@@ -68,7 +68,7 @@
 
   passwordShadow.appendChild(passwordInput);
 
-  // Mirror for Playwright observability — closed shadow roots aren't queryable from outside
+  // Mirror for observability — closed shadow roots aren't queryable from outside
   const passwordMirror = document.createElement("output");
   passwordMirror.setAttribute("data-mirror", "password");
   passwordInput.addEventListener("input", () => {
