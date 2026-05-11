@@ -1,0 +1,19 @@
+---
+slug: custom-elements-galore
+title: custom elements galore (shadow-root probe stress)
+sidebar_label: custom elements galore
+description: a synthetic page populated with many defined custom elements and very few actual shadow roots; exercises the autofill content script's shadow-DOM probe path
+---
+
+import { CustomElementsGalore } from "@site/src/components/CustomElementsGalore";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <div className="card__body">
+        <CustomElementsGalore />
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
