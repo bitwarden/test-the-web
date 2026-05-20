@@ -1,5 +1,6 @@
 import { RefObject, useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
+import { ICON_START, ICON_STOP, ICON_RESET, ICON_WARNING } from "./constants";
 
 const MIN_COUNT = 25;
 const INFINITE_SCROLL_STEP = 50;
@@ -25,13 +26,6 @@ const INITIAL_METRICS: MetricsState = {
   longestRenderMs: 0,
   longTasks: 0,
 };
-
-// Unicode symbols + VS-15 (U+FE0E) to force text presentation rather than
-// the platform-dependent emoji rendering.
-const ICON_START = "▶︎";
-const ICON_STOP = "⏹︎";
-const ICON_RESET = "↻";
-const ICON_WARNING = "⚠︎";
 
 export function RerenderingInputGrid() {
   const [count, setCount] = useState(150);
