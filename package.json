@@ -33,7 +33,7 @@
     "@material/web": "2.4.0",
     "cspell": "10.0.0",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
+    "lint-staged": "17.0.5",
     "nodemon": "3.1.10",
     "prettier": "3.8.1",
     "rimraf": "6.1.2",
