@@ -1,0 +1,9 @@
+{
+  "collapsed": true,
+  "label": "Security",
+  "link": {
+    "type": "generated-index",
+    "description": "Patterns where the host page induces unsafe or risky interactions"
+  },
+  "position": 0
+}
