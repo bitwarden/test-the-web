@@ -1,0 +1,19 @@
+---
+slug: clickjacking-top-layer
+title: top-layer clickjacking
+sidebar_label: clickjacking (top-layer)
+description: "demonstrates how a top-layer popover combined with `pointer-events: none` can act as a visual lure that misdirects user clicks onto a different element underneath"
+---
+
+import { ClickjackingTopLayerDemo } from "@site/src/components/ClickjackingTopLayerDemo";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <div className="card__body">
+        <ClickjackingTopLayerDemo />
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
