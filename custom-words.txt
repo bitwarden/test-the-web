@@ -2,6 +2,7 @@ Bitwarden
 dotfile
 jsmith
 keyserver
+passwordrules
 sandboxed
 TOTP
 typeless
