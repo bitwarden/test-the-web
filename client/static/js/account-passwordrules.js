@@ -8,7 +8,11 @@
 
   rulesInput.value = passwordInput.getAttribute("passwordrules") || "";
 
+  let debounceTimer;
   rulesInput.addEventListener("input", function () {
-    passwordInput.setAttribute("passwordrules", rulesInput.value);
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(function () {
+      passwordInput.setAttribute("passwordrules", rulesInput.value);
+    }, 300);
   });
 })();

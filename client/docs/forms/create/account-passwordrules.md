@@ -3,10 +3,23 @@ slug: create-account-passwordrules
 title: account creation form with passwordrules
 sidebar_label: account (passwordrules)
 sidebar_position: 2
-description: a sign up form requiring an email and password - supports dynamic passwordrules attribute on the password field
+description: a sign up form requiring an email and password - supports dynamic `passwordrules` attribute on the password field
 ---
 
 <script src="/js/account-passwordrules.js" defer="defer"></script>
+
+<div class="col col--12 margin-vert--lg hide-on-bare-page">
+  <label for="passwordrules-input">
+    Password rules (<a href="https://github.com/whatwg/html/issues/3518">HTML definition</a>)
+  </label>
+  <br/>
+  <input
+    id="passwordrules-input"
+    placeholder="e.g. minlength: 20; required: upper; required: digit;"
+    type="text"
+    style="width: 100%"
+  />
+</div>
 
 <div class="container margin-vert--xl">
   <div class="row">
@@ -27,17 +40,6 @@ description: a sign up form requiring an email and password - supports dynamic p
               placeholder="e.g. jsmith@example.com"
               required
               type="text"
-            />
-          </div>
-          <div class="col col--12 margin-bottom--md">
-            <label for="passwordrules-input">Password rules</label>
-            <br/>
-            <input
-              id="passwordrules-input"
-              name="passwordrules-input"
-              placeholder="e.g. minlength: 20; required: upper; required: digit;"
-              type="text"
-              style={{width: "100%"}}
             />
           </div>
           <div class="col col--12 margin-bottom--lg">
