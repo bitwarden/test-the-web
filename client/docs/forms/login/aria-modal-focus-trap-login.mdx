@@ -1,0 +1,18 @@
+---
+slug: aria-modal-focus-trap
+title: ARIA modal focus-trap login form
+sidebar_label: ARIA modal focus-trap
+description: a login form inside a focus-trapping ARIA modal (`role="dialog" aria-modal="true"`, not a native `<dialog>`) that will POST the input values on submit
+as_seen_on: medium.com's login
+---
+
+import { AriaModalFocusTrapLogin } from "@site/src/components/AriaModalFocusTrapLogin";
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <AriaModalFocusTrapLogin />
+    </div>
+  </div>
+</div>
+<hr />
