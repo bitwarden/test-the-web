@@ -57,6 +57,7 @@ export function ClickjackingTopLayerDemo() {
     } catch {
       // showPopover throws if the element is not connected or the API is
       // unsupported; both cases are non-fatal for the demo.
+      performance.mark("error:showLure");
     }
 
     positionLure();
@@ -76,6 +77,7 @@ export function ClickjackingTopLayerDemo() {
       lure.showPopover();
     } catch {
       // Same rationale as showLure above.
+      performance.mark("error:reclaimTopLayer");
     }
 
     positionLure();
