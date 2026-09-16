@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@axe-core/cli": "4.11.0",
-    "@material/web": "2.4.0",
+    "@material/web": "2.5.0",
     "cspell": "10.3.0",
     "husky": "9.1.7",
     "lint-staged": "17.0.5",
