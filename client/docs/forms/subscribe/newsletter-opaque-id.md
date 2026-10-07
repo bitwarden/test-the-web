@@ -2,7 +2,7 @@
 slug: newsletter-opaque-id
 title: newsletter subscribe form with opaque field id
 sidebar_label: opaque id
-description: a newsletter signup form whose email field has no username-related keywords in its `id`, `name`, or `label` — only `type="email"` signals its purpose.
+description: a newsletter signup form whose email field uses an `id`, `name`, and `label` unrelated to its purpose (`id="notification-address"`, `name="contact"`, `label="Sign up for updates"`); only `type="email"` indicates the field type.
 ---
 
 <div class="container margin-vert--xl">
