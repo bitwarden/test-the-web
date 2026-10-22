@@ -8,9 +8,22 @@
   const TRACKED_IDS = ["username", "password"];
   const frameworkState = { username: "", password: "" };
 
+  function getForm() {
+    return document.getElementById("iet-form");
+  }
+
+  function getTrackedInput(id) {
+    const form = getForm();
+    return form ? form.querySelector("#" + id) : null;
+  }
+
   function isTracked(target) {
+    const form = getForm();
     return (
-      target instanceof HTMLInputElement && TRACKED_IDS.includes(target.id)
+      form !== null &&
+      target instanceof HTMLInputElement &&
+      TRACKED_IDS.includes(target.id) &&
+      form.contains(target)
     );
   }
 
@@ -25,8 +38,11 @@
   }
 
   function reconcile() {
+    if (!getForm()) {
+      return;
+    }
     TRACKED_IDS.forEach(function (id) {
-      const input = document.getElementById(id);
+      const input = getTrackedInput(id);
       if (!input) {
         return;
       }
@@ -37,8 +53,8 @@
   }
 
   function renderOnSubmit() {
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
+    const usernameInput = getTrackedInput("username");
+    const passwordInput = getTrackedInput("password");
     const output = document.getElementById("iet-output");
     if (!usernameInput || !passwordInput || !output) {
       return;
@@ -61,7 +77,8 @@
   }
 
   // Delegated listeners on document survive React/Docusaurus hydration and
-  // SPA navigation. Capture-phase so stopPropagation elsewhere can't hide them.
+  // SPA navigation. All DOM access is scoped to #iet-form so stale references
+  // cannot interfere with sibling pages that share id="username" / id="password".
   document.addEventListener("input", captureIfTrusted, true);
 
   document.addEventListener("submit", function (event) {
