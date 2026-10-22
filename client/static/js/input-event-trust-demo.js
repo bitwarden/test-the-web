@@ -40,6 +40,13 @@
     return null;
   }
 
+  function cell(className, text) {
+    const span = document.createElement("span");
+    span.className = className;
+    span.textContent = text;
+    return span;
+  }
+
   function appendLogRow(logList, event) {
     const row = document.createElement("li");
     row.className = event.isTrusted
@@ -50,25 +57,14 @@
     const data = "data" in event ? event.data : undefined;
     const key = "key" in event ? event.key : undefined;
 
-    row.innerHTML =
-      '<span class="iet-log-time">t+' +
-      fmt(relativeTime()) +
-      "ms</span>" +
-      '<span class="iet-log-type">' +
-      fmt(event.type) +
-      "</span>" +
-      '<span class="iet-log-trusted">isTrusted=' +
-      fmt(event.isTrusted) +
-      "</span>" +
-      '<span class="iet-log-inputtype">inputType=' +
-      fmt(inputType) +
-      "</span>" +
-      '<span class="iet-log-data">data=' +
-      fmt(data) +
-      "</span>" +
-      '<span class="iet-log-key">key=' +
-      fmt(key) +
-      "</span>";
+    row.append(
+      cell("iet-log-time", "t+" + fmt(relativeTime()) + "ms"),
+      cell("iet-log-type", fmt(event.type)),
+      cell("iet-log-trusted", "isTrusted=" + fmt(event.isTrusted)),
+      cell("iet-log-inputtype", "inputType=" + fmt(inputType)),
+      cell("iet-log-data", "data=" + fmt(data)),
+      cell("iet-log-key", "key=" + fmt(key)),
+    );
 
     logList.insertBefore(row, logList.firstChild);
 
