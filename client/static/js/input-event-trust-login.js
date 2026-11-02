@@ -52,41 +52,10 @@
     });
   }
 
-  function renderOnSubmit() {
-    const usernameInput = getTrackedInput("username");
-    const passwordInput = getTrackedInput("password");
-    const output = document.getElementById("iet-output");
-    if (!usernameInput || !passwordInput || !output) {
-      return;
-    }
-
-    const captured = {
-      username: frameworkState.username,
-      password: frameworkState.password,
-    };
-    const dom = {
-      username: usernameInput.value,
-      password: passwordInput.value,
-    };
-
-    output.textContent =
-      "form state (what submit would send):\n" +
-      JSON.stringify(captured, null, 2) +
-      "\n\nDOM value (element.value right now):\n" +
-      JSON.stringify(dom, null, 2);
-  }
-
-  // Delegated listeners on document survive React/Docusaurus hydration and
-  // SPA navigation. All DOM access is scoped to #iet-form so stale references
+  // Delegated listener on document survives React/Docusaurus hydration and
+  // SPA navigation. DOM access is scoped to #iet-form so stale references
   // cannot interfere with sibling pages that share id="username" / id="password".
   document.addEventListener("input", captureIfTrusted, true);
-
-  document.addEventListener("submit", function (event) {
-    if (event.target && event.target.id === "iet-form") {
-      event.preventDefault();
-      renderOnSubmit();
-    }
-  });
 
   setInterval(reconcile, RECONCILE_INTERVAL_MS);
 })();
