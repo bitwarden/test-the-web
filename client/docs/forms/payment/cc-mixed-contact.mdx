@@ -1,0 +1,59 @@
+---
+slug: cc-mixed-contact
+title: payment form with billing contact and card fields
+sidebar_label: mixed contact
+sidebar_position: 8
+description: a single form combining billing contact fields (first name, last name, email with given-name/family-name/email autocomplete) alongside card fields (cc-name, cc-number, cc-exp, cc-csc)
+---
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/payment">
+        <div className="row">
+          <div className="col col--6 margin-bottom--md">
+            <label htmlFor="p9-first">First name</label>
+            <br />
+            <input type="text" name="billing_first_name" id="p9-first" autoComplete="given-name" placeholder="Jane" required />
+          </div>
+          <div className="col col--6 margin-bottom--md">
+            <label htmlFor="p9-last">Last name</label>
+            <br />
+            <input type="text" name="billing_last_name" id="p9-last" autoComplete="family-name" placeholder="Smith" required />
+          </div>
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p9-email">Email</label>
+            <br />
+            <input type="email" name="billing_email" id="p9-email" autoComplete="email" placeholder="jane@example.com" required />
+          </div>
+        </div>
+        <hr />
+        <div className="row">
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p9-cc-name">Name on card</label>
+            <br />
+            <input type="text" name="nameOnCard" id="p9-cc-name" autoComplete="cc-name" placeholder="Jane Smith" required />
+          </div>
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p9-number">Card number</label>
+            <br />
+            <input type="text" name="cardNumber" id="p9-number" autoComplete="cc-number" placeholder="•••• •••• •••• ••••" maxLength={19} required />
+          </div>
+          <div className="col col--5 margin-bottom--md">
+            <label htmlFor="p9-exp">Expiry</label>
+            <br />
+            <input type="text" name="expiry" id="p9-exp" autoComplete="cc-exp" placeholder="MM/YY" maxLength={5} required />
+          </div>
+          <div className="col col--5 margin-bottom--md">
+            <label htmlFor="p9-cvv">CVV</label>
+            <br />
+            <input type="text" name="cvv" id="p9-cvv" autoComplete="cc-csc" placeholder="•••" maxLength={4} required />
+          </div>
+        </div>
+        <hr />
+        <button type="submit" className="button button--primary">Pay Now</button>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />

@@ -1,0 +1,41 @@
+---
+slug: cc-expiry-mm-yyyy
+title: card payment form with combined MM/YYYY expiry field
+sidebar_label: MM/YYYY combined
+sidebar_position: 2
+description: a card payment form with a single combined expiry field formatted as MM/YYYY (4-digit year)
+---
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/payment">
+        <div className="row">
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10b-name">Name on card</label>
+            <br />
+            <input type="text" name="nameOnCard" id="p10b-name" autoComplete="cc-name" placeholder="Jane Smith" required />
+          </div>
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10b-num">Card number</label>
+            <br />
+            <input type="text" name="cardNumber" id="p10b-num" autoComplete="cc-number" placeholder="•••• •••• •••• ••••" maxLength={19} required />
+          </div>
+          <div className="col col--5 margin-bottom--md">
+            <label htmlFor="p10b-exp">Expiry (MM/YYYY)</label>
+            <br />
+            <input type="text" name="expiry" id="p10b-exp" autoComplete="cc-exp" placeholder="MM/YYYY" maxLength={7} required />
+          </div>
+          <div className="col col--5 margin-bottom--md">
+            <label htmlFor="p10b-cvv">CVV</label>
+            <br />
+            <input type="text" name="cvv" id="p10b-cvv" autoComplete="cc-csc" placeholder="•••" maxLength={4} required />
+          </div>
+        </div>
+        <hr />
+        <button type="submit" className="button button--primary">Pay</button>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />

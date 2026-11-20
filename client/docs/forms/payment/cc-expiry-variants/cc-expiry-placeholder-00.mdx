@@ -1,0 +1,46 @@
+---
+slug: cc-expiry-placeholder-00
+title: card payment form with split expiry fields and numeric placeholder
+sidebar_label: placeholder "00"
+sidebar_position: 4
+description: a card payment form where expiry month and year are separate inputs with a numeric placeholder and no autocomplete attributes
+---
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/payment">
+        <div className="row">
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10d-name">Cardholder</label>
+            <br />
+            <input type="text" name="nameOnCard" id="p10d-name" placeholder="Jane Smith" required />
+          </div>
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10d-pan">Card Number</label>
+            <br />
+            <input type="text" name="src-pan" id="p10d-pan" placeholder="•••• •••• •••• ••••" maxLength={19} required />
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <label htmlFor="p10d-month">Month</label>
+            <br />
+            <input type="text" name="exp-month" id="p10d-month" placeholder="00" maxLength={2} required />
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <label htmlFor="p10d-year">Year</label>
+            <br />
+            <input type="text" name="exp-year" id="p10d-year" placeholder="00" maxLength={2} required />
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <label htmlFor="p10d-cvv">CVV</label>
+            <br />
+            <input type="text" name="cvv" id="p10d-cvv" placeholder="•••" maxLength={4} required />
+          </div>
+        </div>
+        <hr />
+        <button type="submit" className="button button--primary">Pay</button>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />
