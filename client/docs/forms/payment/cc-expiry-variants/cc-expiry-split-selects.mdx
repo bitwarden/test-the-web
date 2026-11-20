@@ -1,0 +1,70 @@
+---
+slug: cc-expiry-split-selects
+title: card payment form with split month and year expiry selects
+sidebar_label: split selects
+sidebar_position: 3
+description: a card payment form where expiry is split into separate month and year select elements carrying cc-exp-month and cc-exp-year autocomplete attributes
+---
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/payment">
+        <div className="row">
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10c-name">Name on card</label>
+            <br />
+            <input type="text" name="nameOnCard" id="p10c-name" autoComplete="cc-name" placeholder="Jane Smith" required />
+          </div>
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10c-num">Card number</label>
+            <br />
+            <input type="text" name="cardNumber" id="p10c-num" autoComplete="cc-number" placeholder="•••• •••• •••• ••••" maxLength={19} required />
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <label htmlFor="p10c-month">Expiry Month</label>
+            <br />
+            <select name="exp-month" id="p10c-month" autoComplete="cc-exp-month">
+              <option value="">Month</option>
+              <option value="01">01 - Jan</option>
+              <option value="02">02 - Feb</option>
+              <option value="03">03 - Mar</option>
+              <option value="04">04 - Apr</option>
+              <option value="05">05 - May</option>
+              <option value="06">06 - Jun</option>
+              <option value="07">07 - Jul</option>
+              <option value="08">08 - Aug</option>
+              <option value="09">09 - Sep</option>
+              <option value="10">10 - Oct</option>
+              <option value="11">11 - Nov</option>
+              <option value="12">12 - Dec</option>
+            </select>
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <label htmlFor="p10c-year">Expiry Year</label>
+            <br />
+            <select name="exp-year" id="p10c-year" autoComplete="cc-exp-year">
+              <option value="">Year</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+              <option value="2031">2031</option>
+              <option value="2032">2032</option>
+            </select>
+          </div>
+          <div className="col col--4 margin-bottom--md">
+            <label htmlFor="p10c-cvv">CVV</label>
+            <br />
+            <input type="text" name="cvv" id="p10c-cvv" autoComplete="cc-csc" placeholder="•••" maxLength={4} required />
+          </div>
+        </div>
+        <hr />
+        <button type="submit" className="button button--primary">Pay</button>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />

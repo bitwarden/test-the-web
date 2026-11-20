@@ -1,0 +1,41 @@
+---
+slug: cc-expiry-data-mask
+title: card payment form with a masked expiry field
+sidebar_label: input mask
+sidebar_position: 5
+description: a card payment form where the combined expiry field carries a data-mask attribute that enforces a character mask on input
+---
+
+<div className="container margin-vert--xl">
+  <div className="row">
+    <div className="card col col--12 padding--md">
+      <form className="card__body" method="POST" action="/payment">
+        <div className="row">
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10e-name">Name on card</label>
+            <br />
+            <input type="text" name="nameOnCard" id="p10e-name" autoComplete="cc-name" placeholder="Jane Smith" required />
+          </div>
+          <div className="col col--12 margin-bottom--md">
+            <label htmlFor="p10e-num">Card number</label>
+            <br />
+            <input type="text" name="cardNumber" id="p10e-num" autoComplete="cc-number" placeholder="•••• •••• •••• ••••" maxLength={19} required />
+          </div>
+          <div className="col col--5 margin-bottom--md">
+            <label htmlFor="p10e-exp">Expiry</label>
+            <br />
+            <input type="text" name="expiry" id="p10e-exp" autoComplete="cc-exp" placeholder="MM / YY" data-mask="## / ##" maxLength={7} required />
+          </div>
+          <div className="col col--5 margin-bottom--md">
+            <label htmlFor="p10e-cvv">CVV</label>
+            <br />
+            <input type="text" name="cvv" id="p10e-cvv" autoComplete="cc-csc" placeholder="•••" maxLength={4} required />
+          </div>
+        </div>
+        <hr />
+        <button type="submit" className="button button--primary">Pay</button>
+      </form>
+    </div>
+  </div>
+</div>
+<hr />

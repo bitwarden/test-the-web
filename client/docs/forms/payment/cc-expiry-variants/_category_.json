@@ -1,0 +1,9 @@
+{
+  "label": "CC expiry variants",
+  "link": {
+    "type": "generated-index",
+    "description": "Card payment forms with varying expiry field patterns — MM/YY combined, MM/YYYY combined, split month/year selects, numeric placeholder, and input mask"
+  },
+  "position": 3,
+  "collapsed": true
+}
